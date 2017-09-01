@@ -1,0 +1,509 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Welcome to the CVTeque API Documentation\n\n\nOverview\n\n\nThis documentation describes how to use the API.\n\n\nThe API contains data about Users, Collaborators, Skills and Experience of the apps. The app is deployed to Heroku at  \nhttps://cvteque.herokuapp.com/\n.\n\n\nIt handles resources with routes such as \nGET\n, \nPOST\n, \nPATCH\n or \nDELETE\n.\n\n\nThe API is powered by \nVapor\n, a Swift server side framework.\n\n\nVapor utils commands\n\n\n\n\nvapor xcode\n - Regenerate the API project and download dependancies.\n\n\ngit push heroku master\n - Deploy the changes which have been commited to the Heroku server.\n\n\n\n\nProject layout\n\n\nApp/\n    Controllers/\n        UserController          # Routes methods of User.\n        CollaboratorController  # Routes methods of Collaborator.\n        SkillController         # Routes methods of Skill.\n        ExperienceController    # Routes methods of Experience.\n    Model/\n        User            # Entity of the User.\n        Collaborator    # Entity of the Collaborator.\n        Skill           # Entity of the Skill.\n        Experience      # Entity of the Experience.\nRun/\n    main.swift  # The main Swift file where the Droplet is configurated", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#welcome-to-the-cvteque-api-documentation", 
+            "text": "", 
+            "title": "Welcome to the CVTeque API Documentation"
+        }, 
+        {
+            "location": "/#overview", 
+            "text": "This documentation describes how to use the API.  The API contains data about Users, Collaborators, Skills and Experience of the apps. The app is deployed to Heroku at   https://cvteque.herokuapp.com/ .  It handles resources with routes such as  GET ,  POST ,  PATCH  or  DELETE .  The API is powered by  Vapor , a Swift server side framework.", 
+            "title": "Overview"
+        }, 
+        {
+            "location": "/#vapor-utils-commands", 
+            "text": "vapor xcode  - Regenerate the API project and download dependancies.  git push heroku master  - Deploy the changes which have been commited to the Heroku server.", 
+            "title": "Vapor utils commands"
+        }, 
+        {
+            "location": "/#project-layout", 
+            "text": "App/\n    Controllers/\n        UserController          # Routes methods of User.\n        CollaboratorController  # Routes methods of Collaborator.\n        SkillController         # Routes methods of Skill.\n        ExperienceController    # Routes methods of Experience.\n    Model/\n        User            # Entity of the User.\n        Collaborator    # Entity of the Collaborator.\n        Skill           # Entity of the Skill.\n        Experience      # Entity of the Experience.\nRun/\n    main.swift  # The main Swift file where the Droplet is configurated", 
+            "title": "Project layout"
+        }, 
+        {
+            "location": "/users/", 
+            "text": "User\n\n\nDetails\n\n\nUser is the class that is responsible to manage all the users that are registered in the app, it regroups some generic properties such as identity, e-mail, etc.\n\n\nProperties\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nfirstName\n\n\nString\n\n\nThe first name of the user\n\n\n\n\n\n\nlastName\n\n\nString\n\n\nThe last name of the user\n\n\n\n\n\n\ncompagnyName\n\n\nString optionnal\n\n\nThe compagny name where is working the user\n\n\n\n\n\n\nldap\n\n\nString optionnal\n\n\nThe LDAP identifier of the user if exists\n\n\n\n\n\n\nemail\n\n\nString\n\n\nThe e-mail address of the user\n\n\n\n\n\n\n\n\nCRUD Operations\n\n\nAll parameters required by routes of the API need to be passed as JSON format\n\n\nRead all users\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/users\n\n\n\nRead a specific user\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/users/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/users/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe user's ID you want to see.\n\n\n\n\n\n\n\n\nCreate a user\n\n\nPOST\n\n\nhttps://cvteque.herokuapp.com/users\n\n\n\nEXAMPLE OF JSON\n\n\n{\n    \"firstName\":\"Anthony\",\n    \"lastName\": \"Roani\",\n    \"compagnyName\":\"Wordline\",\n    \"ldap\":\"\",\n    \"email\":\"anthonyroani@gmail.com\"\n}\n\n\n\nUpdate a user\n\n\nPATCH\n\n\nhttps://cvteque.herokuapp.com/users/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/users/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe user's ID you want to update.\n\n\n\n\n\n\n\n\nEXAMPLE OF JSON\n\n\n{\n    \"firstName\":\"Anthony\",\n    \"lastName\": \"Roani\",\n    \"compagnyName\":\"Genesis groupe\",\n    \"ldap\":\"\",\n    \"email\":\"a.roani@genesis-groupe.com\"\n}\n\n\n\nDelete a specific user\n\n\nDELETE\n\n\nhttps://cvteque.herokuapp.com/users/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/users/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe user's ID you want to delete.", 
+            "title": "Users"
+        }, 
+        {
+            "location": "/users/#user", 
+            "text": "", 
+            "title": "User"
+        }, 
+        {
+            "location": "/users/#details", 
+            "text": "User is the class that is responsible to manage all the users that are registered in the app, it regroups some generic properties such as identity, e-mail, etc.", 
+            "title": "Details"
+        }, 
+        {
+            "location": "/users/#properties", 
+            "text": "Field  Type  Description      firstName  String  The first name of the user    lastName  String  The last name of the user    compagnyName  String optionnal  The compagny name where is working the user    ldap  String optionnal  The LDAP identifier of the user if exists    email  String  The e-mail address of the user", 
+            "title": "Properties"
+        }, 
+        {
+            "location": "/users/#crud-operations", 
+            "text": "", 
+            "title": "CRUD Operations"
+        }, 
+        {
+            "location": "/users/#all-parameters-required-by-routes-of-the-api-need-to-be-passed-as-json-format", 
+            "text": "", 
+            "title": "All parameters required by routes of the API need to be passed as JSON format"
+        }, 
+        {
+            "location": "/users/#read-all-users", 
+            "text": "", 
+            "title": "Read all users"
+        }, 
+        {
+            "location": "/users/#get", 
+            "text": "https://cvteque.herokuapp.com/users", 
+            "title": "GET"
+        }, 
+        {
+            "location": "/users/#read-a-specific-user", 
+            "text": "", 
+            "title": "Read a specific user"
+        }, 
+        {
+            "location": "/users/#get_1", 
+            "text": "https://cvteque.herokuapp.com/users/:id", 
+            "title": "GET"
+        }, 
+        {
+            "location": "/users/#example-usage", 
+            "text": "https://cvteque.herokuapp.com/users/99", 
+            "title": "EXAMPLE USAGE"
+        }, 
+        {
+            "location": "/users/#parameters", 
+            "text": "Field  Type  Description      id  Int  The user's ID you want to see.", 
+            "title": "PARAMETERS"
+        }, 
+        {
+            "location": "/users/#create-a-user", 
+            "text": "", 
+            "title": "Create a user"
+        }, 
+        {
+            "location": "/users/#post", 
+            "text": "https://cvteque.herokuapp.com/users", 
+            "title": "POST"
+        }, 
+        {
+            "location": "/users/#example-of-json", 
+            "text": "{\n    \"firstName\":\"Anthony\",\n    \"lastName\": \"Roani\",\n    \"compagnyName\":\"Wordline\",\n    \"ldap\":\"\",\n    \"email\":\"anthonyroani@gmail.com\"\n}", 
+            "title": "EXAMPLE OF JSON"
+        }, 
+        {
+            "location": "/users/#update-a-user", 
+            "text": "", 
+            "title": "Update a user"
+        }, 
+        {
+            "location": "/users/#patch", 
+            "text": "https://cvteque.herokuapp.com/users/:id", 
+            "title": "PATCH"
+        }, 
+        {
+            "location": "/users/#example-usage_1", 
+            "text": "https://cvteque.herokuapp.com/users/99", 
+            "title": "EXAMPLE USAGE"
+        }, 
+        {
+            "location": "/users/#parameters_1", 
+            "text": "Field  Type  Description      id  Int  The user's ID you want to update.", 
+            "title": "PARAMETERS"
+        }, 
+        {
+            "location": "/users/#example-of-json_1", 
+            "text": "{\n    \"firstName\":\"Anthony\",\n    \"lastName\": \"Roani\",\n    \"compagnyName\":\"Genesis groupe\",\n    \"ldap\":\"\",\n    \"email\":\"a.roani@genesis-groupe.com\"\n}", 
+            "title": "EXAMPLE OF JSON"
+        }, 
+        {
+            "location": "/users/#delete-a-specific-user", 
+            "text": "", 
+            "title": "Delete a specific user"
+        }, 
+        {
+            "location": "/users/#delete", 
+            "text": "https://cvteque.herokuapp.com/users/:id", 
+            "title": "DELETE"
+        }, 
+        {
+            "location": "/users/#example-usage_2", 
+            "text": "https://cvteque.herokuapp.com/users/99", 
+            "title": "EXAMPLE USAGE"
+        }, 
+        {
+            "location": "/users/#parameters_2", 
+            "text": "Field  Type  Description      id  Int  The user's ID you want to delete.", 
+            "title": "PARAMETERS"
+        }, 
+        {
+            "location": "/collaborators/", 
+            "text": "Collaborator\n\n\nDetails\n\n\nCollaborator is the class that is responsible to manage all the collaborators associated to a User. \n\n\nProperties\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntrigram\n\n\nString\n\n\nThe trigram of the collaborator (\nARI\n for example)\n\n\n\n\n\n\navailableDate\n\n\nString\n\n\nThe date when the collaborator ends its mission\n\n\n\n\n\n\n\n\nCRUD Operations\n\n\nAll parameters required by routes of the API need to be passed as JSON format\n\n\nRead all collaborators\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/collaborators\n\n\n\nRead a specific collaborator\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/collaborators/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/collaborators/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe collaborator's ID you want to see.\n\n\n\n\n\n\n\n\nCreate a collaborator\n\n\nPOST\n\n\nhttps://cvteque.herokuapp.com/collaborators\n\n\n\nEXAMPLE OF JSON\n\n\n{\n    \"trigram\":\"ARI\",\n    \"availableDate\": \"12-06-2017\"\n}\n\n\n\nUpdate a collaborator\n\n\nPATCH\n\n\nhttps://cvteque.herokuapp.com/collaborators/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/collaborators/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe collaborator's ID you want to update.\n\n\n\n\n\n\n\n\nEXAMPLE OF JSON\n\n\n{\n    \"trigram\":\"DLI\",\n    \"availableDate\": \"18-09-2018\"\n}\n\n\n\nDelete a specific collaborator\n\n\nDELETE\n\n\nhttps://cvteque.herokuapp.com/collaborators/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/collaborators/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe collaborator's ID you want to delete.", 
+            "title": "Collaborators"
+        }, 
+        {
+            "location": "/collaborators/#collaborator", 
+            "text": "", 
+            "title": "Collaborator"
+        }, 
+        {
+            "location": "/collaborators/#details", 
+            "text": "Collaborator is the class that is responsible to manage all the collaborators associated to a User.", 
+            "title": "Details"
+        }, 
+        {
+            "location": "/collaborators/#properties", 
+            "text": "Field  Type  Description      trigram  String  The trigram of the collaborator ( ARI  for example)    availableDate  String  The date when the collaborator ends its mission", 
+            "title": "Properties"
+        }, 
+        {
+            "location": "/collaborators/#crud-operations", 
+            "text": "", 
+            "title": "CRUD Operations"
+        }, 
+        {
+            "location": "/collaborators/#all-parameters-required-by-routes-of-the-api-need-to-be-passed-as-json-format", 
+            "text": "", 
+            "title": "All parameters required by routes of the API need to be passed as JSON format"
+        }, 
+        {
+            "location": "/collaborators/#read-all-collaborators", 
+            "text": "", 
+            "title": "Read all collaborators"
+        }, 
+        {
+            "location": "/collaborators/#get", 
+            "text": "https://cvteque.herokuapp.com/collaborators", 
+            "title": "GET"
+        }, 
+        {
+            "location": "/collaborators/#read-a-specific-collaborator", 
+            "text": "", 
+            "title": "Read a specific collaborator"
+        }, 
+        {
+            "location": "/collaborators/#get_1", 
+            "text": "https://cvteque.herokuapp.com/collaborators/:id", 
+            "title": "GET"
+        }, 
+        {
+            "location": "/collaborators/#example-usage", 
+            "text": "https://cvteque.herokuapp.com/collaborators/99", 
+            "title": "EXAMPLE USAGE"
+        }, 
+        {
+            "location": "/collaborators/#parameters", 
+            "text": "Field  Type  Description      id  Int  The collaborator's ID you want to see.", 
+            "title": "PARAMETERS"
+        }, 
+        {
+            "location": "/collaborators/#create-a-collaborator", 
+            "text": "", 
+            "title": "Create a collaborator"
+        }, 
+        {
+            "location": "/collaborators/#post", 
+            "text": "https://cvteque.herokuapp.com/collaborators", 
+            "title": "POST"
+        }, 
+        {
+            "location": "/collaborators/#example-of-json", 
+            "text": "{\n    \"trigram\":\"ARI\",\n    \"availableDate\": \"12-06-2017\"\n}", 
+            "title": "EXAMPLE OF JSON"
+        }, 
+        {
+            "location": "/collaborators/#update-a-collaborator", 
+            "text": "", 
+            "title": "Update a collaborator"
+        }, 
+        {
+            "location": "/collaborators/#patch", 
+            "text": "https://cvteque.herokuapp.com/collaborators/:id", 
+            "title": "PATCH"
+        }, 
+        {
+            "location": "/collaborators/#example-usage_1", 
+            "text": "https://cvteque.herokuapp.com/collaborators/99", 
+            "title": "EXAMPLE USAGE"
+        }, 
+        {
+            "location": "/collaborators/#parameters_1", 
+            "text": "Field  Type  Description      id  Int  The collaborator's ID you want to update.", 
+            "title": "PARAMETERS"
+        }, 
+        {
+            "location": "/collaborators/#example-of-json_1", 
+            "text": "{\n    \"trigram\":\"DLI\",\n    \"availableDate\": \"18-09-2018\"\n}", 
+            "title": "EXAMPLE OF JSON"
+        }, 
+        {
+            "location": "/collaborators/#delete-a-specific-collaborator", 
+            "text": "", 
+            "title": "Delete a specific collaborator"
+        }, 
+        {
+            "location": "/collaborators/#delete", 
+            "text": "https://cvteque.herokuapp.com/collaborators/:id", 
+            "title": "DELETE"
+        }, 
+        {
+            "location": "/collaborators/#example-usage_2", 
+            "text": "https://cvteque.herokuapp.com/collaborators/99", 
+            "title": "EXAMPLE USAGE"
+        }, 
+        {
+            "location": "/collaborators/#parameters_2", 
+            "text": "Field  Type  Description      id  Int  The collaborator's ID you want to delete.", 
+            "title": "PARAMETERS"
+        }, 
+        {
+            "location": "/skills/", 
+            "text": "Skill\n\n\nDetails\n\n\nSkill is the class that is responsible to manage all the skills of the collaborators in the app.\n\n\nProperties\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nname\n\n\nString\n\n\nThe name of the skill\n\n\n\n\n\n\ncolor\n\n\nString\n\n\nThe hexadecimal string of the color\n\n\n\n\n\n\nlevel\n\n\nInt\n\n\nThe collaborator's level in the skill\n\n\n\n\n\n\n\n\nCRUD Operations\n\n\nAll parameters required by routes of the API need to be passed as JSON format\n\n\nRead all skills\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/skills\n\n\n\nRead a specific skill\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/skills/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/skills/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe skill's ID you want to see.\n\n\n\n\n\n\n\n\nCreate a skill\n\n\nPOST\n\n\nhttps://cvteque.herokuapp.com/skill\n\n\n\nEXAMPLE OF JSON\n\n\n{\n    \"name\":\"Swift\",\n    \"color\":\"#F4F4F4\",\n    \"level\":5\n}\n\n\n\nUpdate a skill\n\n\nPATCH\n\n\nhttps://cvteque.herokuapp.com/skills/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/skills/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe skills's ID you want to update.\n\n\n\n\n\n\n\n\nEXAMPLE OF JSON\n\n\n{\n    \"name\":\"C#\",\n    \"color\":\"#FEB6A5\",\n    \"level\":2\n}\n\n\n\nDelete a specific skill\n\n\nDELETE\n\n\nhttps://cvteque.herokuapp.com/skills/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/skills/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe skills's ID you want to delete.", 
+            "title": "Skills"
+        }, 
+        {
+            "location": "/skills/#skill", 
+            "text": "", 
+            "title": "Skill"
+        }, 
+        {
+            "location": "/skills/#details", 
+            "text": "Skill is the class that is responsible to manage all the skills of the collaborators in the app.", 
+            "title": "Details"
+        }, 
+        {
+            "location": "/skills/#properties", 
+            "text": "Field  Type  Description      name  String  The name of the skill    color  String  The hexadecimal string of the color    level  Int  The collaborator's level in the skill", 
+            "title": "Properties"
+        }, 
+        {
+            "location": "/skills/#crud-operations", 
+            "text": "", 
+            "title": "CRUD Operations"
+        }, 
+        {
+            "location": "/skills/#all-parameters-required-by-routes-of-the-api-need-to-be-passed-as-json-format", 
+            "text": "", 
+            "title": "All parameters required by routes of the API need to be passed as JSON format"
+        }, 
+        {
+            "location": "/skills/#read-all-skills", 
+            "text": "", 
+            "title": "Read all skills"
+        }, 
+        {
+            "location": "/skills/#get", 
+            "text": "https://cvteque.herokuapp.com/skills", 
+            "title": "GET"
+        }, 
+        {
+            "location": "/skills/#read-a-specific-skill", 
+            "text": "", 
+            "title": "Read a specific skill"
+        }, 
+        {
+            "location": "/skills/#get_1", 
+            "text": "https://cvteque.herokuapp.com/skills/:id", 
+            "title": "GET"
+        }, 
+        {
+            "location": "/skills/#example-usage", 
+            "text": "https://cvteque.herokuapp.com/skills/99", 
+            "title": "EXAMPLE USAGE"
+        }, 
+        {
+            "location": "/skills/#parameters", 
+            "text": "Field  Type  Description      id  Int  The skill's ID you want to see.", 
+            "title": "PARAMETERS"
+        }, 
+        {
+            "location": "/skills/#create-a-skill", 
+            "text": "", 
+            "title": "Create a skill"
+        }, 
+        {
+            "location": "/skills/#post", 
+            "text": "https://cvteque.herokuapp.com/skill", 
+            "title": "POST"
+        }, 
+        {
+            "location": "/skills/#example-of-json", 
+            "text": "{\n    \"name\":\"Swift\",\n    \"color\":\"#F4F4F4\",\n    \"level\":5\n}", 
+            "title": "EXAMPLE OF JSON"
+        }, 
+        {
+            "location": "/skills/#update-a-skill", 
+            "text": "", 
+            "title": "Update a skill"
+        }, 
+        {
+            "location": "/skills/#patch", 
+            "text": "https://cvteque.herokuapp.com/skills/:id", 
+            "title": "PATCH"
+        }, 
+        {
+            "location": "/skills/#example-usage_1", 
+            "text": "https://cvteque.herokuapp.com/skills/99", 
+            "title": "EXAMPLE USAGE"
+        }, 
+        {
+            "location": "/skills/#parameters_1", 
+            "text": "Field  Type  Description      id  Int  The skills's ID you want to update.", 
+            "title": "PARAMETERS"
+        }, 
+        {
+            "location": "/skills/#example-of-json_1", 
+            "text": "{\n    \"name\":\"C#\",\n    \"color\":\"#FEB6A5\",\n    \"level\":2\n}", 
+            "title": "EXAMPLE OF JSON"
+        }, 
+        {
+            "location": "/skills/#delete-a-specific-skill", 
+            "text": "", 
+            "title": "Delete a specific skill"
+        }, 
+        {
+            "location": "/skills/#delete", 
+            "text": "https://cvteque.herokuapp.com/skills/:id", 
+            "title": "DELETE"
+        }, 
+        {
+            "location": "/skills/#example-usage_2", 
+            "text": "https://cvteque.herokuapp.com/skills/99", 
+            "title": "EXAMPLE USAGE"
+        }, 
+        {
+            "location": "/skills/#parameters_2", 
+            "text": "Field  Type  Description      id  Int  The skills's ID you want to delete.", 
+            "title": "PARAMETERS"
+        }, 
+        {
+            "location": "/experiences/", 
+            "text": "Experience\n\n\nDetails\n\n\nExperience is the class that is responsible to manage all the experiences associated to a Collaborator. \n\n\nProperties\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntrigram\n\n\nString\n\n\nThe trigram of the collaborator \n(example: \nARI\n)\n\n\n\n\n\n\navailableDate\n\n\nString\n\n\nThe date when the collaborator ends its mission. \nFormat is \nDD-mm-yyyy\n.\n\n\n\n\n\n\n\n\nCRUD Operations\n\n\nAll parameters required by routes of the API need to be passed as JSON format\n\n\nRead all experiences\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/experiences\n\n\n\nRead a specific experience\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/experiences/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/experiences/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe experience's ID you want to see.\n\n\n\n\n\n\n\n\nCreate a collaborator\n\n\nPOST\n\n\nhttps://cvteque.herokuapp.com/experiences\n\n\n\nEXAMPLE OF JSON\n\n\n{\n    \"trigram\":\"ARI\",\n    \"availableDate\": \"12-06-2017\"\n}\n\n\n\nUpdate an experience\n\n\nPATCH\n\n\nhttps://cvteque.herokuapp.com/experiences/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/experiences/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe experience's ID you want to update.\n\n\n\n\n\n\n\n\nEXAMPLE OF JSON\n\n\n{\n    \"trigram\":\"DLI\",\n    \"availableDate\": \"18-09-2018\"\n}\n\n\n\nDelete a specific experience\n\n\nDELETE\n\n\nhttps://cvteque.herokuapp.com/experiences/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/experiences/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe experience's ID you want to delete.", 
+            "title": "Experience"
+        }, 
+        {
+            "location": "/experiences/#experience", 
+            "text": "", 
+            "title": "Experience"
+        }, 
+        {
+            "location": "/experiences/#details", 
+            "text": "Experience is the class that is responsible to manage all the experiences associated to a Collaborator.", 
+            "title": "Details"
+        }, 
+        {
+            "location": "/experiences/#properties", 
+            "text": "Field  Type  Description      trigram  String  The trigram of the collaborator  (example:  ARI )    availableDate  String  The date when the collaborator ends its mission.  Format is  DD-mm-yyyy .", 
+            "title": "Properties"
+        }, 
+        {
+            "location": "/experiences/#crud-operations", 
+            "text": "", 
+            "title": "CRUD Operations"
+        }, 
+        {
+            "location": "/experiences/#all-parameters-required-by-routes-of-the-api-need-to-be-passed-as-json-format", 
+            "text": "", 
+            "title": "All parameters required by routes of the API need to be passed as JSON format"
+        }, 
+        {
+            "location": "/experiences/#read-all-experiences", 
+            "text": "", 
+            "title": "Read all experiences"
+        }, 
+        {
+            "location": "/experiences/#get", 
+            "text": "https://cvteque.herokuapp.com/experiences", 
+            "title": "GET"
+        }, 
+        {
+            "location": "/experiences/#read-a-specific-experience", 
+            "text": "", 
+            "title": "Read a specific experience"
+        }, 
+        {
+            "location": "/experiences/#get_1", 
+            "text": "https://cvteque.herokuapp.com/experiences/:id", 
+            "title": "GET"
+        }, 
+        {
+            "location": "/experiences/#example-usage", 
+            "text": "https://cvteque.herokuapp.com/experiences/99", 
+            "title": "EXAMPLE USAGE"
+        }, 
+        {
+            "location": "/experiences/#parameters", 
+            "text": "Field  Type  Description      id  Int  The experience's ID you want to see.", 
+            "title": "PARAMETERS"
+        }, 
+        {
+            "location": "/experiences/#create-a-collaborator", 
+            "text": "", 
+            "title": "Create a collaborator"
+        }, 
+        {
+            "location": "/experiences/#post", 
+            "text": "https://cvteque.herokuapp.com/experiences", 
+            "title": "POST"
+        }, 
+        {
+            "location": "/experiences/#example-of-json", 
+            "text": "{\n    \"trigram\":\"ARI\",\n    \"availableDate\": \"12-06-2017\"\n}", 
+            "title": "EXAMPLE OF JSON"
+        }, 
+        {
+            "location": "/experiences/#update-an-experience", 
+            "text": "", 
+            "title": "Update an experience"
+        }, 
+        {
+            "location": "/experiences/#patch", 
+            "text": "https://cvteque.herokuapp.com/experiences/:id", 
+            "title": "PATCH"
+        }, 
+        {
+            "location": "/experiences/#example-usage_1", 
+            "text": "https://cvteque.herokuapp.com/experiences/99", 
+            "title": "EXAMPLE USAGE"
+        }, 
+        {
+            "location": "/experiences/#parameters_1", 
+            "text": "Field  Type  Description      id  Int  The experience's ID you want to update.", 
+            "title": "PARAMETERS"
+        }, 
+        {
+            "location": "/experiences/#example-of-json_1", 
+            "text": "{\n    \"trigram\":\"DLI\",\n    \"availableDate\": \"18-09-2018\"\n}", 
+            "title": "EXAMPLE OF JSON"
+        }, 
+        {
+            "location": "/experiences/#delete-a-specific-experience", 
+            "text": "", 
+            "title": "Delete a specific experience"
+        }, 
+        {
+            "location": "/experiences/#delete", 
+            "text": "https://cvteque.herokuapp.com/experiences/:id", 
+            "title": "DELETE"
+        }, 
+        {
+            "location": "/experiences/#example-usage_2", 
+            "text": "https://cvteque.herokuapp.com/experiences/99", 
+            "title": "EXAMPLE USAGE"
+        }, 
+        {
+            "location": "/experiences/#parameters_2", 
+            "text": "Field  Type  Description      id  Int  The experience's ID you want to delete.", 
+            "title": "PARAMETERS"
+        }
+    ]
+}
