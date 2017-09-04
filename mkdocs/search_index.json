@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to the CVTeque API Documentation\n\n\nOverview\n\n\nThis documentation describes how to use the API.\n\n\nThe API contains data about Users, Collaborators, Skills and Experience of the apps. The app is deployed to Heroku at  \nhttps://cvteque.herokuapp.com/\n.\n\n\nIt handles resources with routes such as \nGET\n, \nPOST\n, \nPATCH\n or \nDELETE\n.\n\n\nThe API is powered by \nVapor\n, a Swift server side framework.\n\n\nVapor utils commands\n\n\n\n\nvapor xcode\n - Regenerate the API project and download dependancies.\n\n\ngit push heroku master\n - Deploy the changes which have been commited to the Heroku server.\n\n\n\n\nProject layout\n\n\nApp/\n    Controllers/\n        UserController          # Routes methods of User.\n        CollaboratorController  # Routes methods of Collaborator.\n        SkillController         # Routes methods of Skill.\n        ExperienceController    # Routes methods of Experience.\n    Model/\n        User            # Entity of the User.\n        Collaborator    # Entity of the Collaborator.\n        Skill           # Entity of the Skill.\n        Experience      # Entity of the Experience.\nRun/\n    main.swift  # The main Swift file where the Droplet is configurated", 
+            "text": "Welcome to the CVTeque API Documentation\n\n\nOverview\n\n\nThis documentation describes how to use the API.\n\n\nThe API contains data about Users, Employees, Skills and Experience of the apps. The app is deployed to Heroku at  \nhttps://cvteque.herokuapp.com/\n.\n\n\nIt handles resources with routes such as \nGET\n, \nPOST\n, \nPATCH\n or \nDELETE\n.\n\n\nThe API is powered by \nVapor\n, a Swift server side framework.\n\n\nVapor utils commands\n\n\n\n\nvapor xcode\n - Regenerate the API project and download dependancies.\n\n\ngit push heroku master\n - Deploy the changes which have been commited to the Heroku server.\n\n\n\n\nProject layout\n\n\nApp/\n    Controllers/\n        UserController          # Routes methods of User.\n        EmployeeController  # Routes methods of Employee.\n        SkillController         # Routes methods of Skill.\n        ExperienceController    # Routes methods of Experience.\n    Model/\n        User            # Entity of the User.\n        Employee    # Entity of the Employee.\n        Skill           # Entity of the Skill.\n        Experience      # Entity of the Experience.\nRun/\n    main.swift  # The main Swift file where the Droplet is configurated", 
             "title": "Home"
         }, 
         {
@@ -12,7 +12,7 @@
         }, 
         {
             "location": "/#overview", 
-            "text": "This documentation describes how to use the API.  The API contains data about Users, Collaborators, Skills and Experience of the apps. The app is deployed to Heroku at   https://cvteque.herokuapp.com/ .  It handles resources with routes such as  GET ,  POST ,  PATCH  or  DELETE .  The API is powered by  Vapor , a Swift server side framework.", 
+            "text": "This documentation describes how to use the API.  The API contains data about Users, Employees, Skills and Experience of the apps. The app is deployed to Heroku at   https://cvteque.herokuapp.com/ .  It handles resources with routes such as  GET ,  POST ,  PATCH  or  DELETE .  The API is powered by  Vapor , a Swift server side framework.", 
             "title": "Overview"
         }, 
         {
@@ -22,7 +22,7 @@
         }, 
         {
             "location": "/#project-layout", 
-            "text": "App/\n    Controllers/\n        UserController          # Routes methods of User.\n        CollaboratorController  # Routes methods of Collaborator.\n        SkillController         # Routes methods of Skill.\n        ExperienceController    # Routes methods of Experience.\n    Model/\n        User            # Entity of the User.\n        Collaborator    # Entity of the Collaborator.\n        Skill           # Entity of the Skill.\n        Experience      # Entity of the Experience.\nRun/\n    main.swift  # The main Swift file where the Droplet is configurated", 
+            "text": "App/\n    Controllers/\n        UserController          # Routes methods of User.\n        EmployeeController  # Routes methods of Employee.\n        SkillController         # Routes methods of Skill.\n        ExperienceController    # Routes methods of Experience.\n    Model/\n        User            # Entity of the User.\n        Employee    # Entity of the Employee.\n        Skill           # Entity of the Skill.\n        Experience      # Entity of the Experience.\nRun/\n    main.swift  # The main Swift file where the Droplet is configurated", 
             "title": "Project layout"
         }, 
         {
@@ -146,122 +146,122 @@
             "title": "PARAMETERS"
         }, 
         {
-            "location": "/collaborators/", 
+            "location": "/employees/", 
             "text": "Employee\n\n\nDetails\n\n\nemployee is the class that is responsible to manage all the employees associated to a User. \n\n\nProperties\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntrigram\n\n\nString\n\n\nThe trigram of the employee (\nARI\n for example)\n\n\n\n\n\n\navailableDate\n\n\nString\n\n\nThe date when the employee ends its mission\n\n\n\n\n\n\n\n\nCRUD Operations\n\n\nAll parameters required by routes of the API need to be passed as JSON format\n\n\nRead all employees\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/employees\n\n\n\nRead a specific employee\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/employees/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/employees/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to see.\n\n\n\n\n\n\n\n\nCreate an employee\n\n\nPOST\n\n\nhttps://cvteque.herokuapp.com/employees\n\n\n\nEXAMPLE OF JSON\n\n\n{\n    \"trigram\":\"ARI\",\n    \"availableDate\": \"12-06-2017\"\n}\n\n\n\nUpdate an employee\n\n\nPATCH\n\n\nhttps://cvteque.herokuapp.com/employees/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/employees/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to update.\n\n\n\n\n\n\n\n\nEXAMPLE OF JSON\n\n\n{\n    \"trigram\":\"DLI\",\n    \"availableDate\": \"18-09-2018\"\n}\n\n\n\nDelete a specific employee\n\n\nDELETE\n\n\nhttps://cvteque.herokuapp.com/employees/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/employees/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to delete.", 
-            "title": "Collaborators"
+            "title": "Employees"
         }, 
         {
-            "location": "/collaborators/#employee", 
+            "location": "/employees/#employee", 
             "text": "", 
             "title": "Employee"
         }, 
         {
-            "location": "/collaborators/#details", 
+            "location": "/employees/#details", 
             "text": "employee is the class that is responsible to manage all the employees associated to a User.", 
             "title": "Details"
         }, 
         {
-            "location": "/collaborators/#properties", 
+            "location": "/employees/#properties", 
             "text": "Field  Type  Description      trigram  String  The trigram of the employee ( ARI  for example)    availableDate  String  The date when the employee ends its mission", 
             "title": "Properties"
         }, 
         {
-            "location": "/collaborators/#crud-operations", 
+            "location": "/employees/#crud-operations", 
             "text": "", 
             "title": "CRUD Operations"
         }, 
         {
-            "location": "/collaborators/#all-parameters-required-by-routes-of-the-api-need-to-be-passed-as-json-format", 
+            "location": "/employees/#all-parameters-required-by-routes-of-the-api-need-to-be-passed-as-json-format", 
             "text": "", 
             "title": "All parameters required by routes of the API need to be passed as JSON format"
         }, 
         {
-            "location": "/collaborators/#read-all-employees", 
+            "location": "/employees/#read-all-employees", 
             "text": "", 
             "title": "Read all employees"
         }, 
         {
-            "location": "/collaborators/#get", 
+            "location": "/employees/#get", 
             "text": "https://cvteque.herokuapp.com/employees", 
             "title": "GET"
         }, 
         {
-            "location": "/collaborators/#read-a-specific-employee", 
+            "location": "/employees/#read-a-specific-employee", 
             "text": "", 
             "title": "Read a specific employee"
         }, 
         {
-            "location": "/collaborators/#get_1", 
+            "location": "/employees/#get_1", 
             "text": "https://cvteque.herokuapp.com/employees/:id", 
             "title": "GET"
         }, 
         {
-            "location": "/collaborators/#example-usage", 
+            "location": "/employees/#example-usage", 
             "text": "https://cvteque.herokuapp.com/employees/99", 
             "title": "EXAMPLE USAGE"
         }, 
         {
-            "location": "/collaborators/#parameters", 
+            "location": "/employees/#parameters", 
             "text": "Field  Type  Description      id  Int  The employee's ID you want to see.", 
             "title": "PARAMETERS"
         }, 
         {
-            "location": "/collaborators/#create-an-employee", 
+            "location": "/employees/#create-an-employee", 
             "text": "", 
             "title": "Create an employee"
         }, 
         {
-            "location": "/collaborators/#post", 
+            "location": "/employees/#post", 
             "text": "https://cvteque.herokuapp.com/employees", 
             "title": "POST"
         }, 
         {
-            "location": "/collaborators/#example-of-json", 
+            "location": "/employees/#example-of-json", 
             "text": "{\n    \"trigram\":\"ARI\",\n    \"availableDate\": \"12-06-2017\"\n}", 
             "title": "EXAMPLE OF JSON"
         }, 
         {
-            "location": "/collaborators/#update-an-employee", 
+            "location": "/employees/#update-an-employee", 
             "text": "", 
             "title": "Update an employee"
         }, 
         {
-            "location": "/collaborators/#patch", 
+            "location": "/employees/#patch", 
             "text": "https://cvteque.herokuapp.com/employees/:id", 
             "title": "PATCH"
         }, 
         {
-            "location": "/collaborators/#example-usage_1", 
+            "location": "/employees/#example-usage_1", 
             "text": "https://cvteque.herokuapp.com/employees/99", 
             "title": "EXAMPLE USAGE"
         }, 
         {
-            "location": "/collaborators/#parameters_1", 
+            "location": "/employees/#parameters_1", 
             "text": "Field  Type  Description      id  Int  The employee's ID you want to update.", 
             "title": "PARAMETERS"
         }, 
         {
-            "location": "/collaborators/#example-of-json_1", 
+            "location": "/employees/#example-of-json_1", 
             "text": "{\n    \"trigram\":\"DLI\",\n    \"availableDate\": \"18-09-2018\"\n}", 
             "title": "EXAMPLE OF JSON"
         }, 
         {
-            "location": "/collaborators/#delete-a-specific-employee", 
+            "location": "/employees/#delete-a-specific-employee", 
             "text": "", 
             "title": "Delete a specific employee"
         }, 
         {
-            "location": "/collaborators/#delete", 
+            "location": "/employees/#delete", 
             "text": "https://cvteque.herokuapp.com/employees/:id", 
             "title": "DELETE"
         }, 
         {
-            "location": "/collaborators/#example-usage_2", 
+            "location": "/employees/#example-usage_2", 
             "text": "https://cvteque.herokuapp.com/employees/99", 
             "title": "EXAMPLE USAGE"
         }, 
         {
-            "location": "/collaborators/#parameters_2", 
+            "location": "/employees/#parameters_2", 
             "text": "Field  Type  Description      id  Int  The employee's ID you want to delete.", 
             "title": "PARAMETERS"
         }, 

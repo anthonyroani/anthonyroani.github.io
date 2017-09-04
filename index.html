@@ -213,8 +213,8 @@
 
 
   <li class="md-nav__item">
-    <a href="collaborators/" title="Collaborators" class="md-nav__link">
-      Collaborators
+    <a href="employees/" title="Employees" class="md-nav__link">
+      Employees
     </a>
   </li>
 
@@ -302,7 +302,7 @@
                 <h1 id="welcome-to-the-cvteque-api-documentation">Welcome to the CVTeque API Documentation</h1>
 <h2 id="overview">Overview</h2>
 <p>This documentation describes how to use the API.</p>
-<p>The API contains data about Users, Collaborators, Skills and Experience of the apps. The app is deployed to Heroku at  <a href="https://cvteque.herokuapp.com/">https://cvteque.herokuapp.com/</a>.</p>
+<p>The API contains data about Users, Employees, Skills and Experience of the apps. The app is deployed to Heroku at  <a href="https://cvteque.herokuapp.com/">https://cvteque.herokuapp.com/</a>.</p>
 <p>It handles resources with routes such as <strong>GET</strong>, <strong>POST</strong>, <strong>PATCH</strong> or <strong>DELETE</strong>.</p>
 <p>The API is powered by <strong>Vapor</strong>, a Swift server side framework.</p>
 <h2 id="vapor-utils-commands">Vapor utils commands</h2>
@@ -314,12 +314,12 @@
 <pre><code>App/
     Controllers/
         UserController          # Routes methods of User.
-        CollaboratorController  # Routes methods of Collaborator.
+        EmployeeController  # Routes methods of Employee.
         SkillController         # Routes methods of Skill.
         ExperienceController    # Routes methods of Experience.
     Model/
         User            # Entity of the User.
-        Collaborator    # Entity of the Collaborator.
+        Employee    # Entity of the Employee.
         Skill           # Entity of the Skill.
         Experience      # Entity of the Experience.
 Run/
