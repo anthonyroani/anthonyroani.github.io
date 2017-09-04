@@ -219,8 +219,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#read-all-collaborators" title="Read all collaborators" class="md-nav__link">
-    Read all collaborators
+  <a href="#read-all-employees" title="Read all employees" class="md-nav__link">
+    Read all employees
   </a>
   
     <nav class="md-nav">
@@ -239,8 +239,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#read-a-specific-collaborator" title="Read a specific collaborator" class="md-nav__link">
-    Read a specific collaborator
+  <a href="#read-a-specific-employee" title="Read a specific employee" class="md-nav__link">
+    Read a specific employee
   </a>
   
     <nav class="md-nav">
@@ -279,8 +279,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-a-collaborator" title="Create a collaborator" class="md-nav__link">
-    Create a collaborator
+  <a href="#create-an-employee" title="Create an employee" class="md-nav__link">
+    Create an employee
   </a>
   
     <nav class="md-nav">
@@ -312,8 +312,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#update-a-collaborator" title="Update a collaborator" class="md-nav__link">
-    Update a collaborator
+  <a href="#update-an-employee" title="Update an employee" class="md-nav__link">
+    Update an employee
   </a>
   
     <nav class="md-nav">
@@ -365,8 +365,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#delete-a-specific-collaborator" title="Delete a specific collaborator" class="md-nav__link">
-    Delete a specific collaborator
+  <a href="#delete-a-specific-employee" title="Delete a specific employee" class="md-nav__link">
+    Delete a specific employee
   </a>
   
     <nav class="md-nav">
@@ -492,8 +492,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#read-all-collaborators" title="Read all collaborators" class="md-nav__link">
-    Read all collaborators
+  <a href="#read-all-employees" title="Read all employees" class="md-nav__link">
+    Read all employees
   </a>
   
     <nav class="md-nav">
@@ -512,8 +512,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#read-a-specific-collaborator" title="Read a specific collaborator" class="md-nav__link">
-    Read a specific collaborator
+  <a href="#read-a-specific-employee" title="Read a specific employee" class="md-nav__link">
+    Read a specific employee
   </a>
   
     <nav class="md-nav">
@@ -552,8 +552,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-a-collaborator" title="Create a collaborator" class="md-nav__link">
-    Create a collaborator
+  <a href="#create-an-employee" title="Create an employee" class="md-nav__link">
+    Create an employee
   </a>
   
     <nav class="md-nav">
@@ -585,8 +585,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#update-a-collaborator" title="Update a collaborator" class="md-nav__link">
-    Update a collaborator
+  <a href="#update-an-employee" title="Update an employee" class="md-nav__link">
+    Update an employee
   </a>
   
     <nav class="md-nav">
@@ -638,8 +638,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#delete-a-specific-collaborator" title="Delete a specific collaborator" class="md-nav__link">
-    Delete a specific collaborator
+  <a href="#delete-a-specific-employee" title="Delete a specific employee" class="md-nav__link">
+    Delete a specific employee
   </a>
   
     <nav class="md-nav">
@@ -697,9 +697,9 @@
               
                 
                 
-                <h1 id="collaborator">Collaborator</h1>
+                <h1 id="employee">Employee</h1>
 <h3 id="details">Details</h3>
-<p>Collaborator is the class that is responsible to manage all the collaborators associated to a User. </p>
+<p>employee is the class that is responsible to manage all the employees associated to a User. </p>
 <h2 id="properties">Properties</h2>
 <table>
 <thead>
@@ -713,27 +713,27 @@
 <tr>
 <td>trigram</td>
 <td>String</td>
-<td>The trigram of the collaborator (<strong>ARI</strong> for example)</td>
+<td>The trigram of the employee (<strong>ARI</strong> for example)</td>
 </tr>
 <tr>
 <td>availableDate</td>
 <td>String</td>
-<td>The date when the collaborator ends its mission</td>
+<td>The date when the employee ends its mission</td>
 </tr>
 </tbody>
 </table>
 <h2 id="crud-operations">CRUD Operations</h2>
 <h5 id="all-parameters-required-by-routes-of-the-api-need-to-be-passed-as-json-format">All parameters required by routes of the API need to be passed as JSON format</h5>
-<h3 id="read-all-collaborators">Read all collaborators</h3>
+<h3 id="read-all-employees">Read all employees</h3>
 <h4 id="get">GET</h4>
-<pre><code>https://cvteque.herokuapp.com/collaborators
+<pre><code>https://cvteque.herokuapp.com/employees
 </code></pre>
-<h3 id="read-a-specific-collaborator">Read a specific collaborator</h3>
+<h3 id="read-a-specific-employee">Read a specific employee</h3>
 <h4 id="get_1">GET</h4>
-<pre><code>https://cvteque.herokuapp.com/collaborators/:id
+<pre><code>https://cvteque.herokuapp.com/employees/:id
 </code></pre>
 <h5 id="example-usage">EXAMPLE USAGE</h5>
-<pre><code>https://cvteque.herokuapp.com/collaborators/99
+<pre><code>https://cvteque.herokuapp.com/employees/99
 </code></pre>
 <h4 id="parameters">PARAMETERS</h4>
 <table>
@@ -748,13 +748,13 @@
 <tr>
 <td>id</td>
 <td>Int</td>
-<td>The collaborator's ID you want to see.</td>
+<td>The employee's ID you want to see.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="create-a-collaborator">Create a collaborator</h3>
+<h3 id="create-an-employee">Create an employee</h3>
 <h4 id="post">POST</h4>
-<pre><code>https://cvteque.herokuapp.com/collaborators
+<pre><code>https://cvteque.herokuapp.com/employees
 </code></pre>
 <h5 id="example-of-json">EXAMPLE OF JSON</h5>
 <pre><code>{
@@ -762,12 +762,12 @@
     "availableDate": "12-06-2017"
 }
 </code></pre>
-<h3 id="update-a-collaborator">Update a collaborator</h3>
+<h3 id="update-an-employee">Update an employee</h3>
 <h4 id="patch">PATCH</h4>
-<pre><code>https://cvteque.herokuapp.com/collaborators/:id
+<pre><code>https://cvteque.herokuapp.com/employees/:id
 </code></pre>
 <h5 id="example-usage_1">EXAMPLE USAGE</h5>
-<pre><code>https://cvteque.herokuapp.com/collaborators/99
+<pre><code>https://cvteque.herokuapp.com/employees/99
 </code></pre>
 <h4 id="parameters_1">PARAMETERS</h4>
 <table>
@@ -782,7 +782,7 @@
 <tr>
 <td>id</td>
 <td>Int</td>
-<td>The collaborator's ID you want to update.</td>
+<td>The employee's ID you want to update.</td>
 </tr>
 </tbody>
 </table>
@@ -792,12 +792,12 @@
     "availableDate": "18-09-2018"
 }
 </code></pre>
-<h3 id="delete-a-specific-collaborator">Delete a specific collaborator</h3>
+<h3 id="delete-a-specific-employee">Delete a specific employee</h3>
 <h4 id="delete">DELETE</h4>
-<pre><code>https://cvteque.herokuapp.com/collaborators/:id
+<pre><code>https://cvteque.herokuapp.com/employees/:id
 </code></pre>
 <h5 id="example-usage_2">EXAMPLE USAGE</h5>
-<pre><code>https://cvteque.herokuapp.com/collaborators/99
+<pre><code>https://cvteque.herokuapp.com/employees/99
 </code></pre>
 <h4 id="parameters_2">PARAMETERS</h4>
 <table>
@@ -812,7 +812,7 @@
 <tr>
 <td>id</td>
 <td>Int</td>
-<td>The collaborator's ID you want to delete.</td>
+<td>The employee's ID you want to delete.</td>
 </tr>
 </tbody>
 </table>

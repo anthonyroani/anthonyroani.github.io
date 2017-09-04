@@ -147,22 +147,22 @@
         }, 
         {
             "location": "/collaborators/", 
-            "text": "Collaborator\n\n\nDetails\n\n\nCollaborator is the class that is responsible to manage all the collaborators associated to a User. \n\n\nProperties\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntrigram\n\n\nString\n\n\nThe trigram of the collaborator (\nARI\n for example)\n\n\n\n\n\n\navailableDate\n\n\nString\n\n\nThe date when the collaborator ends its mission\n\n\n\n\n\n\n\n\nCRUD Operations\n\n\nAll parameters required by routes of the API need to be passed as JSON format\n\n\nRead all collaborators\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/collaborators\n\n\n\nRead a specific collaborator\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/collaborators/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/collaborators/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe collaborator's ID you want to see.\n\n\n\n\n\n\n\n\nCreate a collaborator\n\n\nPOST\n\n\nhttps://cvteque.herokuapp.com/collaborators\n\n\n\nEXAMPLE OF JSON\n\n\n{\n    \"trigram\":\"ARI\",\n    \"availableDate\": \"12-06-2017\"\n}\n\n\n\nUpdate a collaborator\n\n\nPATCH\n\n\nhttps://cvteque.herokuapp.com/collaborators/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/collaborators/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe collaborator's ID you want to update.\n\n\n\n\n\n\n\n\nEXAMPLE OF JSON\n\n\n{\n    \"trigram\":\"DLI\",\n    \"availableDate\": \"18-09-2018\"\n}\n\n\n\nDelete a specific collaborator\n\n\nDELETE\n\n\nhttps://cvteque.herokuapp.com/collaborators/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/collaborators/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe collaborator's ID you want to delete.", 
+            "text": "Employee\n\n\nDetails\n\n\nemployee is the class that is responsible to manage all the employees associated to a User. \n\n\nProperties\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntrigram\n\n\nString\n\n\nThe trigram of the employee (\nARI\n for example)\n\n\n\n\n\n\navailableDate\n\n\nString\n\n\nThe date when the employee ends its mission\n\n\n\n\n\n\n\n\nCRUD Operations\n\n\nAll parameters required by routes of the API need to be passed as JSON format\n\n\nRead all employees\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/employees\n\n\n\nRead a specific employee\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/employees/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/employees/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to see.\n\n\n\n\n\n\n\n\nCreate an employee\n\n\nPOST\n\n\nhttps://cvteque.herokuapp.com/employees\n\n\n\nEXAMPLE OF JSON\n\n\n{\n    \"trigram\":\"ARI\",\n    \"availableDate\": \"12-06-2017\"\n}\n\n\n\nUpdate an employee\n\n\nPATCH\n\n\nhttps://cvteque.herokuapp.com/employees/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/employees/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to update.\n\n\n\n\n\n\n\n\nEXAMPLE OF JSON\n\n\n{\n    \"trigram\":\"DLI\",\n    \"availableDate\": \"18-09-2018\"\n}\n\n\n\nDelete a specific employee\n\n\nDELETE\n\n\nhttps://cvteque.herokuapp.com/employees/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/employees/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to delete.", 
             "title": "Collaborators"
         }, 
         {
-            "location": "/collaborators/#collaborator", 
+            "location": "/collaborators/#employee", 
             "text": "", 
-            "title": "Collaborator"
+            "title": "Employee"
         }, 
         {
             "location": "/collaborators/#details", 
-            "text": "Collaborator is the class that is responsible to manage all the collaborators associated to a User.", 
+            "text": "employee is the class that is responsible to manage all the employees associated to a User.", 
             "title": "Details"
         }, 
         {
             "location": "/collaborators/#properties", 
-            "text": "Field  Type  Description      trigram  String  The trigram of the collaborator ( ARI  for example)    availableDate  String  The date when the collaborator ends its mission", 
+            "text": "Field  Type  Description      trigram  String  The trigram of the employee ( ARI  for example)    availableDate  String  The date when the employee ends its mission", 
             "title": "Properties"
         }, 
         {
@@ -176,43 +176,43 @@
             "title": "All parameters required by routes of the API need to be passed as JSON format"
         }, 
         {
-            "location": "/collaborators/#read-all-collaborators", 
+            "location": "/collaborators/#read-all-employees", 
             "text": "", 
-            "title": "Read all collaborators"
+            "title": "Read all employees"
         }, 
         {
             "location": "/collaborators/#get", 
-            "text": "https://cvteque.herokuapp.com/collaborators", 
+            "text": "https://cvteque.herokuapp.com/employees", 
             "title": "GET"
         }, 
         {
-            "location": "/collaborators/#read-a-specific-collaborator", 
+            "location": "/collaborators/#read-a-specific-employee", 
             "text": "", 
-            "title": "Read a specific collaborator"
+            "title": "Read a specific employee"
         }, 
         {
             "location": "/collaborators/#get_1", 
-            "text": "https://cvteque.herokuapp.com/collaborators/:id", 
+            "text": "https://cvteque.herokuapp.com/employees/:id", 
             "title": "GET"
         }, 
         {
             "location": "/collaborators/#example-usage", 
-            "text": "https://cvteque.herokuapp.com/collaborators/99", 
+            "text": "https://cvteque.herokuapp.com/employees/99", 
             "title": "EXAMPLE USAGE"
         }, 
         {
             "location": "/collaborators/#parameters", 
-            "text": "Field  Type  Description      id  Int  The collaborator's ID you want to see.", 
+            "text": "Field  Type  Description      id  Int  The employee's ID you want to see.", 
             "title": "PARAMETERS"
         }, 
         {
-            "location": "/collaborators/#create-a-collaborator", 
+            "location": "/collaborators/#create-an-employee", 
             "text": "", 
-            "title": "Create a collaborator"
+            "title": "Create an employee"
         }, 
         {
             "location": "/collaborators/#post", 
-            "text": "https://cvteque.herokuapp.com/collaborators", 
+            "text": "https://cvteque.herokuapp.com/employees", 
             "title": "POST"
         }, 
         {
@@ -221,23 +221,23 @@
             "title": "EXAMPLE OF JSON"
         }, 
         {
-            "location": "/collaborators/#update-a-collaborator", 
+            "location": "/collaborators/#update-an-employee", 
             "text": "", 
-            "title": "Update a collaborator"
+            "title": "Update an employee"
         }, 
         {
             "location": "/collaborators/#patch", 
-            "text": "https://cvteque.herokuapp.com/collaborators/:id", 
+            "text": "https://cvteque.herokuapp.com/employees/:id", 
             "title": "PATCH"
         }, 
         {
             "location": "/collaborators/#example-usage_1", 
-            "text": "https://cvteque.herokuapp.com/collaborators/99", 
+            "text": "https://cvteque.herokuapp.com/employees/99", 
             "title": "EXAMPLE USAGE"
         }, 
         {
             "location": "/collaborators/#parameters_1", 
-            "text": "Field  Type  Description      id  Int  The collaborator's ID you want to update.", 
+            "text": "Field  Type  Description      id  Int  The employee's ID you want to update.", 
             "title": "PARAMETERS"
         }, 
         {
@@ -246,23 +246,23 @@
             "title": "EXAMPLE OF JSON"
         }, 
         {
-            "location": "/collaborators/#delete-a-specific-collaborator", 
+            "location": "/collaborators/#delete-a-specific-employee", 
             "text": "", 
-            "title": "Delete a specific collaborator"
+            "title": "Delete a specific employee"
         }, 
         {
             "location": "/collaborators/#delete", 
-            "text": "https://cvteque.herokuapp.com/collaborators/:id", 
+            "text": "https://cvteque.herokuapp.com/employees/:id", 
             "title": "DELETE"
         }, 
         {
             "location": "/collaborators/#example-usage_2", 
-            "text": "https://cvteque.herokuapp.com/collaborators/99", 
+            "text": "https://cvteque.herokuapp.com/employees/99", 
             "title": "EXAMPLE USAGE"
         }, 
         {
             "location": "/collaborators/#parameters_2", 
-            "text": "Field  Type  Description      id  Int  The collaborator's ID you want to delete.", 
+            "text": "Field  Type  Description      id  Int  The employee's ID you want to delete.", 
             "title": "PARAMETERS"
         }, 
         {
