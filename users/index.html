@@ -189,26 +189,12 @@
     Properties
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#crud-operations" title="CRUD Operations" class="md-nav__link">
-    CRUD Operations
-  </a>
-  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#all-parameters-required-by-routes-of-the-api-need-to-be-passed-as-json-format" title="All parameters required by routes of the API need to be passed as JSON format" class="md-nav__link">
-    All parameters required by routes of the API need to be passed as JSON format
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#read-all-userscreate-an-experience-for-an-employee" title="Read all userscreate-an-experience-for-an-employee" class="md-nav__link">
-    Read all userscreate-an-experience-for-an-employee
+  <a href="#read-all-users" title="Read all users" class="md-nav__link">
+    Read all users
   </a>
   
     <nav class="md-nav">
@@ -474,26 +460,12 @@
     Properties
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#crud-operations" title="CRUD Operations" class="md-nav__link">
-    CRUD Operations
-  </a>
-  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#all-parameters-required-by-routes-of-the-api-need-to-be-passed-as-json-format" title="All parameters required by routes of the API need to be passed as JSON format" class="md-nav__link">
-    All parameters required by routes of the API need to be passed as JSON format
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#read-all-userscreate-an-experience-for-an-employee" title="Read all userscreate-an-experience-for-an-employee" class="md-nav__link">
-    Read all userscreate-an-experience-for-an-employee
+  <a href="#read-all-users" title="Read all users" class="md-nav__link">
+    Read all users
   </a>
   
     <nav class="md-nav">
@@ -699,7 +671,8 @@
                 
                 <h1 id="users">Users</h1>
 <h3 id="details">Details</h3>
-<p>User is the class that is responsible to manage all the users that are registered in the app, it regroups some generic properties such as identity, e-mail, etc.</p>
+<p>User is the Entity that is responsible to manage all the Users that are registered in the app, it regroups some generic properties such as identity, e-mail, etc.</p>
+<p>A User have a <strong>One to One</strong> relationship with <strong>Employee</strong> as an Employee is a sub-entity of User. </p>
 <h2 id="properties">Properties</h2>
 <table>
 <thead>
@@ -722,24 +695,31 @@
 </tr>
 <tr>
 <td>compagnyName</td>
-<td>String optionnal</td>
+<td>String <em>optional</em></td>
 <td>The compagny name where is working the user</td>
 </tr>
 <tr>
 <td>ldap</td>
-<td>String optionnal</td>
+<td><strong>Unique</strong> String <em>optional</em></td>
 <td>The LDAP identifier of the user if exists</td>
 </tr>
 <tr>
 <td>email</td>
-<td>String</td>
+<td><strong>Unique</strong> String</td>
 <td>The e-mail address of the user</td>
+</tr>
+<tr>
+<td>employeeId</td>
+<td>Int <em>optional</em></td>
+<td>The foreign key ID of the associated Employee</td>
 </tr>
 </tbody>
 </table>
-<h2 id="crud-operations">CRUD Operations</h2>
-<h5 id="all-parameters-required-by-routes-of-the-api-need-to-be-passed-as-json-format">All parameters required by routes of the API need to be passed as JSON format</h5>
-<h3 id="read-all-userscreate-an-experience-for-an-employee">Read all userscreate-an-experience-for-an-employee</h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>All parameters required by routes of the API need to be passed as JSON format</p>
+</div>
+<h3 id="read-all-users">Read all users</h3>
 <h4 id="get">GET</h4>
 <pre><code>https://cvteque.herokuapp.com/users
 </code></pre>
@@ -773,11 +753,15 @@
 </code></pre>
 <h5 id="example-of-json">EXAMPLE OF JSON</h5>
 <pre><code>{
-    "firstName":"Anthony",
+  "created object": {
     "lastName": "Roani",
-    "compagnyName":"Wordline",
-    "ldap":"",
-    "email":"anthonyroani@gmail.com"
+    "compagnyName": "Wordline",
+    "firstName": "Anthony",
+    "email": "anthonyroani@gmail.com",
+    "ldap": "ARI",
+    "employeeId": null
+  },
+  "success": true
 }
 </code></pre>
 <h3 id="update-a-user">Update a user</h3>

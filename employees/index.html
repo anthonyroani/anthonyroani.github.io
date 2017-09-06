@@ -194,22 +194,8 @@
     Properties
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#crud-operations" title="CRUD Operations" class="md-nav__link">
-    CRUD Operations
-  </a>
-  
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#all-parameters-required-by-routes-of-the-api-need-to-be-passed-as-json-format" title="All parameters required by routes of the API need to be passed as JSON format" class="md-nav__link">
-    All parameters required by routes of the API need to be passed as JSON format
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#read-all-employees" title="Read all employees" class="md-nav__link">
@@ -238,19 +224,6 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-an-employee" title="Create an Employee" class="md-nav__link">
-    Create an Employee
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#post" title="POST" class="md-nav__link">
@@ -440,22 +413,8 @@
     Properties
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#crud-operations" title="CRUD Operations" class="md-nav__link">
-    CRUD Operations
-  </a>
-  
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#all-parameters-required-by-routes-of-the-api-need-to-be-passed-as-json-format" title="All parameters required by routes of the API need to be passed as JSON format" class="md-nav__link">
-    All parameters required by routes of the API need to be passed as JSON format
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#read-all-employees" title="Read all employees" class="md-nav__link">
@@ -484,19 +443,6 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-an-employee" title="Create an Employee" class="md-nav__link">
-    Create an Employee
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#post" title="POST" class="md-nav__link">
@@ -673,8 +619,10 @@
 </tr>
 </tbody>
 </table>
-<h2 id="crud-operations">CRUD Operations</h2>
-<h5 id="all-parameters-required-by-routes-of-the-api-need-to-be-passed-as-json-format">All parameters required by routes of the API need to be passed as JSON format</h5>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>All parameters required by routes of the API need to be passed as JSON format</p>
+</div>
 <h3 id="read-all-employees">Read all employees</h3>
 <p>Returns the list of all employees and their experiences</p>
 <h4 id="get">GET</h4>
@@ -699,20 +647,25 @@
   }
 ]
 </code></pre>
-<h3 id="create-an-employee">Create an Employee</h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In order to create an Employee, <strong>the corresponding User needs to be created before</strong>. This POST request requires the ID of the User.</p>
+</div>
 <h4 id="post">POST</h4>
 <pre><code>https://cvteque.herokuapp.com/employees
 </code></pre>
 <h5 id="example-of-json">EXAMPLE OF JSON</h5>
 <pre><code>{
     "trigram":"ARI",
-    "availableDate": "12-06-2017"
+    "availableDate": "12-06-2017",
+    "userId":1
 }
 </code></pre>
 <h5 id="response-example">RESPONSE EXAMPLE</h5>
 <pre><code>{
   "employee": {
-    "trigram": "ARI",
+    "trigram": "PLU",
+    "userId": 1,
     "availableDate": "03-11-2017"
   },
   "success": true
@@ -743,12 +696,15 @@
 </tbody>
 </table>
 <h5 id="example-of-json_1">EXAMPLE OF JSON</h5>
-<p><em><strong>Tips</strong> : The same JSON as Create, just change the values you want.</em></p>
 <pre><code>{
     "trigram":"DLI",
     "availableDate": "18-09-2018"
 }
 </code></pre>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The JSON is the same as Create, just change the values you want.</p>
+</div>
 <h3 id="delete-a-specific-employee">Delete a specific Employee</h3>
 <h4 id="delete">DELETE</h4>
 <pre><code>https://cvteque.herokuapp.com/employees/:id
@@ -887,8 +843,10 @@
 </tr>
 </tbody>
 </table>
-<p><em><strong>Tips</strong> : The same JSON as Create an Experience, just change the values you want.</em></p>
-<p><strong><em>Warning : You have to send all the parameters to update the Experience</em></strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>All the parameters have to be sent to update an Experience.</p>
+</div>
 <h5 id="example-of-json_3">EXAMPLE OF JSON</h5>
 <pre><code>{
     "title":"Vapor Developer",
@@ -898,6 +856,10 @@
     "endDate":"15-08-2017"
 }
 </code></pre>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The same JSON as Create an Experience, just change the values you want.</p>
+</div>
 <h3 id="delete-all-the-experiences-of-an-employee">Delete all the Experiences of an Employee</h3>
 <h4 id="delete_1">DELETE</h4>
 <pre><code>https://cvteque.herokuapp.com/employees/:id/experiences
