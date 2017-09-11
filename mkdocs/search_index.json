@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to the CVTeque API Documentation\n\n\nOverview\n\n\nThis documentation describes how to use the API.\n\n\nThe API contains data about Users, Employees, Skills and Experience of the apps. The app is deployed to Heroku at  \nhttps://cvteque.herokuapp.com/\n.\n\n\nIt handles resources with routes such as \nGET\n, \nPOST\n, \nPATCH\n or \nDELETE\n.\n\n\nThe API is powered by \nVapor\n, a Swift server side framework.\n\n\nVapor utils commands\n\n\n\n\nvapor xcode\n - Regenerate the API project and download dependancies.\n\n\ngit push heroku master\n - Deploy the changes which have been commited to the Heroku server.\n\n\n\n\nProject layout\n\n\nApp/\n    Controllers/\n        UserController          # Routes methods of User.\n        EmployeeController  # Routes methods of Employee.\n        SkillController         # Routes methods of Skill.\n        ExperienceController    # Routes methods of Experience.\n    Model/\n        User            # Entity of the User.\n        Employee    # Entity of the Employee.\n        Skill           # Entity of the Skill.\n        Experience      # Entity of the Experience.\nRun/\n    main.swift  # The main Swift file where the Droplet is configurated", 
+            "text": "Welcome to the CVTeque API Documentation\n\n\nOverview\n\n\nThis documentation describes how to use the API.\n\n\nThe API contains data about Users, Employees, Skills and Experience of the apps. The app is deployed to Heroku at \nhttps://cvteque.herokuapp.com/\n.\n\n\nIt handles resources with routes such as \nGET\n, \nPOST\n, \nPATCH\n or \nDELETE\n.\n\n\nThe API is powered by \nVapor\n, a Swift server side framework.\n\n\nVapor utils commands\n\n\n\n\nvapor xcode\n - Regenerate the API project and download dependancies.\n\n\ngit push heroku master\n - Deploy the changes which have been commited to the Heroku server.\n\n\n\n\nAvailable services\n\n\nHere is the list of the available services\n\n\n\n\nCRUD\n1\n User\n\n\nCRUD\n Employee \n\n\nCRUD\n Experience\n\n\nCRUD\n Skill\n\n\nLink a User and an Employee\n\n\nAdd, read or delete skills for a given Employee\n\n\nAdd, read or delete experiences for a given Employee\n\n\n\n\nProject layout\n\n\nApp/\n    Controllers/\n        UserController          # Routes methods of User.\n        EmployeeController      # Routes methods of Employee.\n        SkillController         # Routes methods of Skill.\n        ExperienceController    # Routes methods of Experience.\n    Model/\n        User            # Entity of the User.\n        Employee        # Entity of the Employee.\n        Skill           # Entity of the Skill.\n        Experience      # Entity of the Experience.\n    Utils/\n        ErrorsManager   # Class handling errors \nRun/\n    main.swift  # The main Swift file where the Droplet is configurated\n\n\n\n\n\n\n\n\n\n\n\n\n\nCreate, Read, Update and Delete an Entity", 
             "title": "Home"
         }, 
         {
@@ -12,7 +12,7 @@
         }, 
         {
             "location": "/#overview", 
-            "text": "This documentation describes how to use the API.  The API contains data about Users, Employees, Skills and Experience of the apps. The app is deployed to Heroku at   https://cvteque.herokuapp.com/ .  It handles resources with routes such as  GET ,  POST ,  PATCH  or  DELETE .  The API is powered by  Vapor , a Swift server side framework.", 
+            "text": "This documentation describes how to use the API.  The API contains data about Users, Employees, Skills and Experience of the apps. The app is deployed to Heroku at  https://cvteque.herokuapp.com/ .  It handles resources with routes such as  GET ,  POST ,  PATCH  or  DELETE .  The API is powered by  Vapor , a Swift server side framework.", 
             "title": "Overview"
         }, 
         {
@@ -21,13 +21,18 @@
             "title": "Vapor utils commands"
         }, 
         {
+            "location": "/#available-services", 
+            "text": "Here is the list of the available services   CRUD 1  User  CRUD  Employee   CRUD  Experience  CRUD  Skill  Link a User and an Employee  Add, read or delete skills for a given Employee  Add, read or delete experiences for a given Employee", 
+            "title": "Available services"
+        }, 
+        {
             "location": "/#project-layout", 
-            "text": "App/\n    Controllers/\n        UserController          # Routes methods of User.\n        EmployeeController  # Routes methods of Employee.\n        SkillController         # Routes methods of Skill.\n        ExperienceController    # Routes methods of Experience.\n    Model/\n        User            # Entity of the User.\n        Employee    # Entity of the Employee.\n        Skill           # Entity of the Skill.\n        Experience      # Entity of the Experience.\nRun/\n    main.swift  # The main Swift file where the Droplet is configurated", 
+            "text": "App/\n    Controllers/\n        UserController          # Routes methods of User.\n        EmployeeController      # Routes methods of Employee.\n        SkillController         # Routes methods of Skill.\n        ExperienceController    # Routes methods of Experience.\n    Model/\n        User            # Entity of the User.\n        Employee        # Entity of the Employee.\n        Skill           # Entity of the Skill.\n        Experience      # Entity of the Experience.\n    Utils/\n        ErrorsManager   # Class handling errors \nRun/\n    main.swift  # The main Swift file where the Droplet is configurated      Create, Read, Update and Delete an Entity", 
             "title": "Project layout"
         }, 
         {
             "location": "/users/", 
-            "text": "Users\n\n\nDetails\n\n\nUser is the Entity that is responsible to manage all the Users that are registered in the app, it regroups some generic properties such as identity, e-mail, etc.\n\n\nA User have a \nOne to One\n relationship with \nEmployee\n as an Employee is a sub-entity of User. \n\n\nProperties\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nfirstName\n\n\nString\n\n\nThe first name of the user\n\n\n\n\n\n\nlastName\n\n\nString\n\n\nThe last name of the user\n\n\n\n\n\n\ncompagnyName\n\n\nString \noptional\n\n\nThe compagny name where is working the user\n\n\n\n\n\n\nldap\n\n\nUnique\n String \noptional\n\n\nThe LDAP identifier of the user if exists\n\n\n\n\n\n\nemail\n\n\nUnique\n String\n\n\nThe e-mail address of the user\n\n\n\n\n\n\nemployeeId\n\n\nInt \noptional\n\n\nThe foreign key ID of the associated Employee\n\n\n\n\n\n\n\n\n\n\nInfo\n\n\nAll parameters required by routes of the API need to be passed as JSON format\n\n\n\n\nRead all users\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/users\n\n\n\nRead a specific user\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/users/:id\n\n\n\nUsage example\n\n\nhttps://cvteque.herokuapp.com/users/99\n\n\n\nParameters\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe user's ID you want to see.\n\n\n\n\n\n\n\n\nCreate a user\n\n\nPOST\n\n\nhttps://cvteque.herokuapp.com/users\n\n\n\nJSON example\n\n\n{\n  \"created object\": {\n    \"lastName\": \"Roani\",\n    \"compagnyName\": \"Wordline\",\n    \"firstName\": \"Anthony\",\n    \"email\": \"anthonyroani@gmail.com\",\n    \"ldap\": \"ARI\",\n    \"employeeId\": null\n  },\n  \"success\": true\n}\n\n\n\nUpdate a user\n\n\nPATCH\n\n\nhttps://cvteque.herokuapp.com/users/:id\n\n\n\nUsage example\n\n\nhttps://cvteque.herokuapp.com/users/99\n\n\n\nParameters\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe user's ID you want to update.\n\n\n\n\n\n\n\n\nJSON example\n\n\n{\n    \"firstName\":\"Anthony\",\n    \"lastName\": \"Roani\",\n    \"compagnyName\":\"Genesis groupe\",\n    \"ldap\":\"\",\n    \"email\":\"a.roani@genesis-groupe.com\"\n}\n\n\n\nDelete a specific user\n\n\nDELETE\n\n\nhttps://cvteque.herokuapp.com/users/:id\n\n\n\nUsage example\n\n\nhttps://cvteque.herokuapp.com/users/99\n\n\n\nParameters\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe user's ID you want to delete.", 
+            "text": "Users\n\n\nDescription\n\n\nUser is the Entity that is responsible to manage all the Users that are registered in the app, it regroups some generic properties such as identity, e-mail, etc.\n\n\nA User have a \nOne to One\n relationship with \nEmployee\n as an Employee is a sub-entity of User. \n\n\nProperties\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nfirstName\n\n\nString\n\n\nThe first name of the user\n\n\n\n\n\n\nlastName\n\n\nString\n\n\nThe last name of the user\n\n\n\n\n\n\ncompagnyName\n\n\nString \noptional\n\n\nThe compagny name where is working the user\n\n\n\n\n\n\nldap\n\n\nString \noptional\n \n(unique)\n\n\nThe LDAP identifier of the user if exists\n\n\n\n\n\n\nemail\n\n\nString \n(unique)\n\n\nThe e-mail address of the user\n\n\n\n\n\n\nemployeeId\n\n\nInt \noptional\n\n\nThe foreign key ID of the associated Employee\n\n\n\n\n\n\n\n\n\n\nInfo\n\n\nAll parameters required by routes of the API need to be passed as JSON format\n\n\n\n\nRead all users\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/users\n\n\n\n\n\nRead a specific user\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/users/:id\n\n\n\n\n\nUsage example\n\n\nhttps://cvteque.herokuapp.com/users/99\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe user's ID you want to see.\n\n\n\n\n\n\n\n\nCreate a user\n\n\nPOST\n\n\nhttps://cvteque.herokuapp.com/users\n\n\n\n\n\nJSON example\n\n\n    \n{\n\n      \ncreated object\n:\n \n{\n\n        \nlastName\n:\n \nRoani\n,\n\n        \ncompagnyName\n:\n \nWordline\n,\n\n        \nfirstName\n:\n \nAnthony\n,\n\n        \nemail\n:\n \nanthonyroani@gmail.com\n,\n\n        \nldap\n:\n \nARI\n,\n\n        \nemployeeId\n:\n \nnull\n\n      \n},\n\n      \nsuccess\n:\n \ntrue\n\n    \n}\n\n\n\n\n\n\nUpdate a user\n\n\nPATCH\n\n\nhttps://cvteque.herokuapp.com/users/:id\n\n\n\n\n\nUsage example\n\n\nhttps://cvteque.herokuapp.com/users/99\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe user's ID you want to update.\n\n\n\n\n\n\n\n\nJSON example\n\n\n    \n{\n\n        \nfirstName\n:\nAnthony\n,\n\n        \nlastName\n:\n \nRoani\n,\n\n        \ncompagnyName\n:\nGenesis groupe\n,\n\n        \nldap\n:\n,\n\n        \nemail\n:\na.roani@genesis-groupe.com\n\n    \n}\n\n\n\n\n\n\nDelete a specific user\n\n\nDELETE\n\n\nhttps://cvteque.herokuapp.com/users/:id\n\n\n\n\n\nUsage example\n\n\nhttps://cvteque.herokuapp.com/users/99\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe user's ID you want to delete.", 
             "title": "Users"
         }, 
         {
@@ -36,13 +41,13 @@
             "title": "Users"
         }, 
         {
-            "location": "/users/#details", 
+            "location": "/users/#description", 
             "text": "User is the Entity that is responsible to manage all the Users that are registered in the app, it regroups some generic properties such as identity, e-mail, etc.  A User have a  One to One  relationship with  Employee  as an Employee is a sub-entity of User.", 
-            "title": "Details"
+            "title": "Description"
         }, 
         {
             "location": "/users/#properties", 
-            "text": "Field  Type  Description      firstName  String  The first name of the user    lastName  String  The last name of the user    compagnyName  String  optional  The compagny name where is working the user    ldap  Unique  String  optional  The LDAP identifier of the user if exists    email  Unique  String  The e-mail address of the user    employeeId  Int  optional  The foreign key ID of the associated Employee      Info  All parameters required by routes of the API need to be passed as JSON format", 
+            "text": "Field  Type  Description      firstName  String  The first name of the user    lastName  String  The last name of the user    compagnyName  String  optional  The compagny name where is working the user    ldap  String  optional   (unique)  The LDAP identifier of the user if exists    email  String  (unique)  The e-mail address of the user    employeeId  Int  optional  The foreign key ID of the associated Employee      Info  All parameters required by routes of the API need to be passed as JSON format", 
             "title": "Properties"
         }, 
         {
@@ -87,7 +92,7 @@
         }, 
         {
             "location": "/users/#json-example", 
-            "text": "{\n  \"created object\": {\n    \"lastName\": \"Roani\",\n    \"compagnyName\": \"Wordline\",\n    \"firstName\": \"Anthony\",\n    \"email\": \"anthonyroani@gmail.com\",\n    \"ldap\": \"ARI\",\n    \"employeeId\": null\n  },\n  \"success\": true\n}", 
+            "text": "{ \n       created object :   { \n         lastName :   Roani , \n         compagnyName :   Wordline , \n         firstName :   Anthony , \n         email :   anthonyroani@gmail.com , \n         ldap :   ARI , \n         employeeId :   null \n       }, \n       success :   true \n     }", 
             "title": "JSON example"
         }, 
         {
@@ -112,7 +117,7 @@
         }, 
         {
             "location": "/users/#json-example_1", 
-            "text": "{\n    \"firstName\":\"Anthony\",\n    \"lastName\": \"Roani\",\n    \"compagnyName\":\"Genesis groupe\",\n    \"ldap\":\"\",\n    \"email\":\"a.roani@genesis-groupe.com\"\n}", 
+            "text": "{ \n         firstName : Anthony , \n         lastName :   Roani , \n         compagnyName : Genesis groupe , \n         ldap : , \n         email : a.roani@genesis-groupe.com \n     }", 
             "title": "JSON example"
         }, 
         {
@@ -137,17 +142,22 @@
         }, 
         {
             "location": "/employees/", 
-            "text": "Employees\n\n\nEmployee is the entity that is responsible to manage all the \nemployees\n associated to a User entity. \n\n\nThe entity has a \nOne to Many\n relationship with Experience as he can have several experiences.\n\n\nProperties\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nemployeeId\n\n\nInt\n\n\nThe foreign key ID of the Employee that have the Experience\n\n\n\n\n\n\ntrigram\n\n\nString\n\n\nThe trigram of the Employee (\nARI\n for example)\n\n\n\n\n\n\navailableDate\n\n\nString\n\n\nThe date where the Employee complete a mission\n\n\n\n\n\n\n\n\n\n\nInfo\n\n\nAll parameters required by routes of the API need to be passed as JSON format\n\n\n\n\nRead all employees\n\n\nReturns the list of all employees and their experiences\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/employees\n\n\n\nResponse example\n\n\n[\n  {\n    \"experiences\": [],\n    \"trigram\": \"PMU\",\n    \"availableDate\": \"03-11-2017\"\n  },\n  {\n    \"experiences\": [],\n    \"trigram\": \"ARI\",\n    \"availableDate\": \"03-11-2017\"\n  },\n  {\n    \"experiences\": [],\n    \"trigram\": \"SCH\",\n    \"availableDate\": \"03-11-2017\"\n  }\n]\n\n\n\n\n\nWarning\n\n\nIn order to create an Employee, \nthe corresponding User needs to be created before\n. This POST request requires the ID of the User.\n\n\n\n\nPOST\n\n\nhttps://cvteque.herokuapp.com/employees\n\n\n\nJSON example\n\n\n{\n    \"trigram\":\"ARI\",\n    \"availableDate\": \"12-06-2017\",\n    \"userId\":1\n}\n\n\n\nResponse example\n\n\n{\n  \"employee\": {\n    \"trigram\": \"PLU\",\n    \"userId\": 1,\n    \"availableDate\": \"03-11-2017\"\n  },\n  \"success\": true\n}\n\n\n\nUpdate an employee\n\n\nPATCH\n\n\nhttps://cvteque.herokuapp.com/employees/:id\n\n\n\nUsage example\n\n\nhttps://cvteque.herokuapp.com/employees/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to update.\n\n\n\n\n\n\n\n\nJSON example\n\n\n{\n    \"trigram\":\"PLU\",\n    \"availableDate\":\"03-11-2017\",\n    \"userId\":1\n}\n\n\n\n\n\nTip\n\n\nThe JSON is the same as Create, just change the values you want.\n\n\n\n\nResponse example\n\n\n{\n  \"updated object\": {\n    \"trigram\": \"PLU\",\n    \"userId\": 1,\n    \"availableDate\": \"03-11-2017\"\n  },\n  \"success\": true\n}\n\n\n\nDelete a specific Employee\n\n\nDELETE\n\n\nhttps://cvteque.herokuapp.com/employees/:id\n\n\n\nUsage example\n\n\nhttps://cvteque.herokuapp.com/employees/99\n\n\n\nParameters\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to delete.\n\n\n\n\n\n\n\n\nRelationships\n\n\nExperiences operations : create, update and delete\n\n\nRead the existing Experience objects\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/employees/:id/experiences\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/employees/99/experiences\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to see.\n\n\n\n\n\n\n\n\nResponse example : an array of experiences\n\n\n{\n  \"experiences\": [\n    {\n      \"endDate\": \"15-08-2017\",\n      \"desc\": \"Adolescebat autem obstinatum propositum erga haec et similia multa scrutanda, stimulos admovente regina, quae abrupte mariti fortunas trudebat in exitium praeceps, cum eum potius lenitate feminea ad veritatis humanitatisque viam reducere utilia suadendo deberet, ut in Gordianorum actibus factitasse Maximini truculenti illius imperatoris rettulimus coniugem.\",\n      \"title\": \"Vapor Developer\",\n      \"compagnyName\": \"Volvo\",\n      \"startDate\": \"15-04-2015\",\n      \"employeeId\": 1\n    },\n    {\n      \"endDate\": \"15-08-2017\",\n      \"desc\": \"Adolescebat autem obstinatum propositum erga haec et similia multa scrutanda, stimulos admovente regina, quae abrupte mariti fortunas trudebat in exitium praeceps, cum eum potius lenitate feminea ad veritatis humanitatisque viam reducere utilia suadendo deberet, ut in Gordianorum actibus factitasse Maximini truculenti illius imperatoris rettulimus coniugem.\",\n      \"title\": \"Vapor Developer\",\n      \"compagnyName\": \"Volvo\",\n      \"startDate\": \"15-04-2015\",\n      \"employeeId\": 1\n    }\n  ]\n}\n\n\n\nCreate an experience for an Employee\n\n\nThis endpoint add an Experience for an Employee. \n\n\nPOST\n\n\nhttps://cvteque.herokuapp.com/employees/:id/experiences\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/employees/99/experiences\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to add an experience.\n\n\n\n\n\n\n\n\nRequirements\n\n\nIt needs a JSON \nExperience\n object passed in the request's body.\n\n\nEXAMPLE OF JSON\n\n\n{\n    \"title\":\"Vapor Developer\",\n    \"compagnyName\":\"Volvo\",\n    \"desc\":\"Adolescebat autem obstinatum propositum...\",\n    \"startDate\":\"15-04-2015\",\n    \"endDate\":\"15-08-2017\"\n}\n\n\n\nUpdate an experience for an Employee\n\n\nThis endpoint updates an existing experience for an Employee.\n\n\nPATCH\n\n\nhttps://cvteque.herokuapp.com/employees/:employee_id/experiences/:experience_id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/employees/99/experiences/10\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nemployee_id\n\n\nInt\n\n\nThe employee's ID you want to update the experience.\n\n\n\n\n\n\nexperience_id\n\n\nInt\n\n\nThe experience's ID you want to update.\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\nAll the parameters have to be sent to update an Experience.\n\n\n\n\nEXAMPLE OF JSON\n\n\n{\n    \"title\":\"Vapor Developer\",\n    \"compagnyName\":\"Volvo\",\n    \"desc\":\"Adolescebat autem obstinatum propositum...\",\n    \"startDate\":\"15-04-2015\",\n    \"endDate\":\"15-08-2017\"\n}\n\n\n\n\n\nTip\n\n\nThe same JSON as Create an Experience, just change the values you want.\n\n\n\n\nDelete all the Experiences of an Employee\n\n\nDELETE\n\n\nhttps://cvteque.herokuapp.com/employees/:id/experiences\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/employees/99/experiences\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to delete.", 
+            "text": "Employees\n\n\nDescription\n\n\nEmployee is the entity that is responsible to manage all the \nemployees\n associated to a User entity. \n\n\nThe entity has a \nOne to Many\n relationship with Experience as he can have several experiences.\n\n\nProperties\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nemployeeId\n\n\nInt\n\n\nThe foreign key ID of the Employee that have the Experience\n\n\n\n\n\n\ntrigram\n\n\nString\n \n(unique)\n\n\nThe trigram of the Employee (\nARI\n for example)\n\n\n\n\n\n\navailableDate\n\n\nString\n\n\nThe date where the Employee complete a mission\n\n\n\n\n\n\n\n\n\n\nInfo\n\n\nAll parameters required by routes of the API need to be passed as JSON format\n\n\n\n\nRead all employees\n\n\nReturns the list of all employees and their experiences\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/employees\n\n\n\n\n\nResponse example\n\n\n    \n[\n\n      \n{\n\n        \nexperiences\n:\n \n[],\n\n        \ntrigram\n:\n \nPMU\n,\n\n        \navailableDate\n:\n \n03-11-2017\n\n      \n},\n\n      \n{\n\n        \nexperiences\n:\n \n[],\n\n        \ntrigram\n:\n \nARI\n,\n\n        \navailableDate\n:\n \n03-11-2017\n\n      \n},\n\n      \n{\n\n        \nexperiences\n:\n \n[],\n\n        \ntrigram\n:\n \nSCH\n,\n\n        \navailableDate\n:\n \n03-11-2017\n\n      \n}\n\n    \n]\n\n\n\n\n\n\n\n\nWarning\n\n\nIn order to create an Employee, \nthe corresponding User needs to be created before\n. This POST request requires the ID of the User.\n\n\n\n\nPOST\n\n\nhttps://cvteque.herokuapp.com/employees\n\n\n\n\n\nJSON example\n\n\n    \n{\n\n        \ntrigram\n:\nARI\n,\n\n        \navailableDate\n:\n \n12-06-2017\n,\n\n        \nuserId\n:\n1\n\n    \n}\n\n\n\n\n\n\nResponse example\n\n\n    \n{\n\n      \nemployee\n:\n \n{\n\n        \ntrigram\n:\n \nPLU\n,\n\n        \nuserId\n:\n \n1\n,\n\n        \navailableDate\n:\n \n03-11-2017\n\n      \n},\n\n      \nsuccess\n:\n \ntrue\n\n    \n}\n\n\n\n\n\n\nUpdate an employee\n\n\nPATCH\n\n\nhttps://cvteque.herokuapp.com/employees/:id\n\n\n\n\n\nUsage example\n\n\nhttps://cvteque.herokuapp.com/employees/99\n\n\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to update.\n\n\n\n\n\n\n\n\nJSON example\n\n\n    \n{\n\n        \ntrigram\n:\nPLU\n,\n\n        \navailableDate\n:\n03-11-2017\n,\n\n        \nuserId\n:\n1\n\n    \n}\n\n\n\n\n\n\n\n\nTip\n\n\nThe JSON is the same as Create, just change the values you want.\n\n\n\n\nResponse example\n\n\n    \n{\n\n      \nupdated object\n:\n \n{\n\n        \ntrigram\n:\n \nPLU\n,\n\n        \nuserId\n:\n \n1\n,\n\n        \navailableDate\n:\n \n03-11-2017\n\n      \n},\n\n      \nsuccess\n:\n \ntrue\n\n    \n}\n\n\n\n\n\n\nDelete a specific Employee\n\n\nDELETE\n\n\nhttps://cvteque.herokuapp.com/employees/:id\n\n\n\n\n\nUsage example\n\n\nhttps://cvteque.herokuapp.com/employees/99\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to delete.", 
             "title": "Employees"
         }, 
         {
             "location": "/employees/#employees", 
-            "text": "Employee is the entity that is responsible to manage all the  employees  associated to a User entity.   The entity has a  One to Many  relationship with Experience as he can have several experiences.", 
+            "text": "", 
             "title": "Employees"
         }, 
         {
+            "location": "/employees/#description", 
+            "text": "Employee is the entity that is responsible to manage all the  employees  associated to a User entity.   The entity has a  One to Many  relationship with Experience as he can have several experiences.", 
+            "title": "Description"
+        }, 
+        {
             "location": "/employees/#properties", 
-            "text": "Field  Type  Description      employeeId  Int  The foreign key ID of the Employee that have the Experience    trigram  String  The trigram of the Employee ( ARI  for example)    availableDate  String  The date where the Employee complete a mission      Info  All parameters required by routes of the API need to be passed as JSON format", 
+            "text": "Field  Type  Description      employeeId  Int  The foreign key ID of the Employee that have the Experience    trigram  String   (unique)  The trigram of the Employee ( ARI  for example)    availableDate  String  The date where the Employee complete a mission      Info  All parameters required by routes of the API need to be passed as JSON format", 
             "title": "Properties"
         }, 
         {
@@ -162,7 +172,7 @@
         }, 
         {
             "location": "/employees/#response-example", 
-            "text": "[\n  {\n    \"experiences\": [],\n    \"trigram\": \"PMU\",\n    \"availableDate\": \"03-11-2017\"\n  },\n  {\n    \"experiences\": [],\n    \"trigram\": \"ARI\",\n    \"availableDate\": \"03-11-2017\"\n  },\n  {\n    \"experiences\": [],\n    \"trigram\": \"SCH\",\n    \"availableDate\": \"03-11-2017\"\n  }\n]   Warning  In order to create an Employee,  the corresponding User needs to be created before . This POST request requires the ID of the User.", 
+            "text": "[ \n       { \n         experiences :   [], \n         trigram :   PMU , \n         availableDate :   03-11-2017 \n       }, \n       { \n         experiences :   [], \n         trigram :   ARI , \n         availableDate :   03-11-2017 \n       }, \n       { \n         experiences :   [], \n         trigram :   SCH , \n         availableDate :   03-11-2017 \n       } \n     ]    Warning  In order to create an Employee,  the corresponding User needs to be created before . This POST request requires the ID of the User.", 
             "title": "Response example"
         }, 
         {
@@ -172,12 +182,12 @@
         }, 
         {
             "location": "/employees/#json-example", 
-            "text": "{\n    \"trigram\":\"ARI\",\n    \"availableDate\": \"12-06-2017\",\n    \"userId\":1\n}", 
+            "text": "{ \n         trigram : ARI , \n         availableDate :   12-06-2017 , \n         userId : 1 \n     }", 
             "title": "JSON example"
         }, 
         {
             "location": "/employees/#response-example_1", 
-            "text": "{\n  \"employee\": {\n    \"trigram\": \"PLU\",\n    \"userId\": 1,\n    \"availableDate\": \"03-11-2017\"\n  },\n  \"success\": true\n}", 
+            "text": "{ \n       employee :   { \n         trigram :   PLU , \n         userId :   1 , \n         availableDate :   03-11-2017 \n       }, \n       success :   true \n     }", 
             "title": "Response example"
         }, 
         {
@@ -202,12 +212,12 @@
         }, 
         {
             "location": "/employees/#json-example_1", 
-            "text": "{\n    \"trigram\":\"PLU\",\n    \"availableDate\":\"03-11-2017\",\n    \"userId\":1\n}   Tip  The JSON is the same as Create, just change the values you want.", 
+            "text": "{ \n         trigram : PLU , \n         availableDate : 03-11-2017 , \n         userId : 1 \n     }    Tip  The JSON is the same as Create, just change the values you want.", 
             "title": "JSON example"
         }, 
         {
             "location": "/employees/#response-example_2", 
-            "text": "{\n  \"updated object\": {\n    \"trigram\": \"PLU\",\n    \"userId\": 1,\n    \"availableDate\": \"03-11-2017\"\n  },\n  \"success\": true\n}", 
+            "text": "{ \n       updated object :   { \n         trigram :   PLU , \n         userId :   1 , \n         availableDate :   03-11-2017 \n       }, \n       success :   true \n     }", 
             "title": "Response example"
         }, 
         {
@@ -231,118 +241,8 @@
             "title": "Parameters"
         }, 
         {
-            "location": "/employees/#relationships", 
-            "text": "", 
-            "title": "Relationships"
-        }, 
-        {
-            "location": "/employees/#experiences-operations-create-update-and-delete", 
-            "text": "", 
-            "title": "Experiences operations : create, update and delete"
-        }, 
-        {
-            "location": "/employees/#read-the-existing-experience-objects", 
-            "text": "", 
-            "title": "Read the existing Experience objects"
-        }, 
-        {
-            "location": "/employees/#get_1", 
-            "text": "https://cvteque.herokuapp.com/employees/:id/experiences", 
-            "title": "GET"
-        }, 
-        {
-            "location": "/employees/#example-usage", 
-            "text": "https://cvteque.herokuapp.com/employees/99/experiences", 
-            "title": "EXAMPLE USAGE"
-        }, 
-        {
-            "location": "/employees/#parameters_2", 
-            "text": "Field  Type  Description      id  Int  The employee's ID you want to see.", 
-            "title": "PARAMETERS"
-        }, 
-        {
-            "location": "/employees/#response-example-an-array-of-experiences", 
-            "text": "{\n  \"experiences\": [\n    {\n      \"endDate\": \"15-08-2017\",\n      \"desc\": \"Adolescebat autem obstinatum propositum erga haec et similia multa scrutanda, stimulos admovente regina, quae abrupte mariti fortunas trudebat in exitium praeceps, cum eum potius lenitate feminea ad veritatis humanitatisque viam reducere utilia suadendo deberet, ut in Gordianorum actibus factitasse Maximini truculenti illius imperatoris rettulimus coniugem.\",\n      \"title\": \"Vapor Developer\",\n      \"compagnyName\": \"Volvo\",\n      \"startDate\": \"15-04-2015\",\n      \"employeeId\": 1\n    },\n    {\n      \"endDate\": \"15-08-2017\",\n      \"desc\": \"Adolescebat autem obstinatum propositum erga haec et similia multa scrutanda, stimulos admovente regina, quae abrupte mariti fortunas trudebat in exitium praeceps, cum eum potius lenitate feminea ad veritatis humanitatisque viam reducere utilia suadendo deberet, ut in Gordianorum actibus factitasse Maximini truculenti illius imperatoris rettulimus coniugem.\",\n      \"title\": \"Vapor Developer\",\n      \"compagnyName\": \"Volvo\",\n      \"startDate\": \"15-04-2015\",\n      \"employeeId\": 1\n    }\n  ]\n}", 
-            "title": "Response example : an array of experiences"
-        }, 
-        {
-            "location": "/employees/#create-an-experience-for-an-employee", 
-            "text": "This endpoint add an Experience for an Employee.", 
-            "title": "Create an experience for an Employee"
-        }, 
-        {
-            "location": "/employees/#post_1", 
-            "text": "https://cvteque.herokuapp.com/employees/:id/experiences", 
-            "title": "POST"
-        }, 
-        {
-            "location": "/employees/#example-usage_1", 
-            "text": "https://cvteque.herokuapp.com/employees/99/experiences", 
-            "title": "EXAMPLE USAGE"
-        }, 
-        {
-            "location": "/employees/#parameters_3", 
-            "text": "Field  Type  Description      id  Int  The employee's ID you want to add an experience.", 
-            "title": "PARAMETERS"
-        }, 
-        {
-            "location": "/employees/#requirements", 
-            "text": "It needs a JSON  Experience  object passed in the request's body.", 
-            "title": "Requirements"
-        }, 
-        {
-            "location": "/employees/#example-of-json", 
-            "text": "{\n    \"title\":\"Vapor Developer\",\n    \"compagnyName\":\"Volvo\",\n    \"desc\":\"Adolescebat autem obstinatum propositum...\",\n    \"startDate\":\"15-04-2015\",\n    \"endDate\":\"15-08-2017\"\n}", 
-            "title": "EXAMPLE OF JSON"
-        }, 
-        {
-            "location": "/employees/#update-an-experience-for-an-employee", 
-            "text": "This endpoint updates an existing experience for an Employee.", 
-            "title": "Update an experience for an Employee"
-        }, 
-        {
-            "location": "/employees/#patch_1", 
-            "text": "https://cvteque.herokuapp.com/employees/:employee_id/experiences/:experience_id", 
-            "title": "PATCH"
-        }, 
-        {
-            "location": "/employees/#example-usage_2", 
-            "text": "https://cvteque.herokuapp.com/employees/99/experiences/10", 
-            "title": "EXAMPLE USAGE"
-        }, 
-        {
-            "location": "/employees/#parameters_4", 
-            "text": "Field  Type  Description      employee_id  Int  The employee's ID you want to update the experience.    experience_id  Int  The experience's ID you want to update.      Warning  All the parameters have to be sent to update an Experience.", 
-            "title": "PARAMETERS"
-        }, 
-        {
-            "location": "/employees/#example-of-json_1", 
-            "text": "{\n    \"title\":\"Vapor Developer\",\n    \"compagnyName\":\"Volvo\",\n    \"desc\":\"Adolescebat autem obstinatum propositum...\",\n    \"startDate\":\"15-04-2015\",\n    \"endDate\":\"15-08-2017\"\n}   Tip  The same JSON as Create an Experience, just change the values you want.", 
-            "title": "EXAMPLE OF JSON"
-        }, 
-        {
-            "location": "/employees/#delete-all-the-experiences-of-an-employee", 
-            "text": "", 
-            "title": "Delete all the Experiences of an Employee"
-        }, 
-        {
-            "location": "/employees/#delete_1", 
-            "text": "https://cvteque.herokuapp.com/employees/:id/experiences", 
-            "title": "DELETE"
-        }, 
-        {
-            "location": "/employees/#example-usage_3", 
-            "text": "https://cvteque.herokuapp.com/employees/99/experiences", 
-            "title": "EXAMPLE USAGE"
-        }, 
-        {
-            "location": "/employees/#parameters_5", 
-            "text": "Field  Type  Description      id  Int  The employee's ID you want to delete.", 
-            "title": "PARAMETERS"
-        }, 
-        {
             "location": "/skills/", 
-            "text": "Skills\n\n\nDetails\n\n\nSkill is the class that is responsible to manage all the skills of the collaborators in the app.\n\n\nProperties\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nname\n\n\nString\n\n\nThe name of the skill\n\n\n\n\n\n\ncolor\n\n\nString\n\n\nThe hexadecimal string of the color\n\n\n\n\n\n\nlevel\n\n\nInt\n\n\nThe collaborator's level in the skill\n\n\n\n\n\n\n\n\n\n\nInfo\n\n\nAll parameters required by routes of the API need to be passed as JSON format### Read all skills\n\n\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/skills\n\n\n\nRead a specific skill\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/skills/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/skills/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe skill's ID you want to see.\n\n\n\n\n\n\n\n\nCreate a skill\n\n\nPOST\n\n\nhttps://cvteque.herokuapp.com/skill\n\n\n\nEXAMPLE OF JSON\n\n\n{\n    \"name\":\"Swift\",\n    \"color\":\"#F4F4F4\",\n    \"level\":5\n}\n\n\n\nUpdate a skill\n\n\nPATCH\n\n\nhttps://cvteque.herokuapp.com/skills/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/skills/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe skills's ID you want to update.\n\n\n\n\n\n\n\n\nEXAMPLE OF JSON\n\n\n{\n    \"name\":\"C#\",\n    \"color\":\"#FEB6A5\",\n    \"level\":2\n}\n\n\n\nDelete a specific skill\n\n\nDELETE\n\n\nhttps://cvteque.herokuapp.com/skills/:id\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/skills/99\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe skills's ID you want to delete.", 
+            "text": "Skills\n\n\nDescription\n\n\nSkill is the class that is responsible to manage all the skills of the CVTeque.\n\n\nHowever, this is not the class responsible of managing skills of an Employee.\n\n\nSee \nhere\n to know how to manage skills for a specific Employee.\n\n\nProperties\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nname\n\n\nString \n(unique)\n\n\nThe name of the skill\n\n\n\n\n\n\ncolor\n\n\nString\n\n\nThe hexadecimal string of the color\n\n\n\n\n\n\n\n\n\n\nInfo\n\n\nAll parameters required by routes of the API need to be passed as JSON format### Read all skills\n\n\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/skills\n\n\n\n\n\nRead a specific skill\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/skills/:id\n\n\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/skills/99\n\n\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe skill's ID you want to see.\n\n\n\n\n\n\n\n\nCreate a skill\n\n\nPOST\n\n\nhttps://cvteque.herokuapp.com/skill\n\n\n\n\n\nEXAMPLE OF JSON\n\n\n    \n{\n\n        \nname\n:\nSwift\n,\n\n        \ncolor\n:\n#F4F4F4\n\n    \n}\n\n\n\n\n\n\nUpdate a skill\n\n\nPATCH\n\n\nhttps://cvteque.herokuapp.com/skills/:id\n\n\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/skills/99\n\n\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe skills's ID you want to update.\n\n\n\n\n\n\n\n\nEXAMPLE OF JSON\n\n\n    \n{\n\n        \nname\n:\nC#\n,\n\n        \ncolor\n:\n#FEB6A5\n\n    \n}\n\n\n\n\n\n\nDelete a specific skill\n\n\nDELETE\n\n\nhttps://cvteque.herokuapp.com/skills/:id\n\n\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/skills/99\n\n\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe skills's ID you want to delete.", 
             "title": "Skills"
         }, 
         {
@@ -351,13 +251,13 @@
             "title": "Skills"
         }, 
         {
-            "location": "/skills/#details", 
-            "text": "Skill is the class that is responsible to manage all the skills of the collaborators in the app.", 
-            "title": "Details"
+            "location": "/skills/#description", 
+            "text": "Skill is the class that is responsible to manage all the skills of the CVTeque.  However, this is not the class responsible of managing skills of an Employee.  See  here  to know how to manage skills for a specific Employee.", 
+            "title": "Description"
         }, 
         {
             "location": "/skills/#properties", 
-            "text": "Field  Type  Description      name  String  The name of the skill    color  String  The hexadecimal string of the color    level  Int  The collaborator's level in the skill      Info  All parameters required by routes of the API need to be passed as JSON format### Read all skills", 
+            "text": "Field  Type  Description      name  String  (unique)  The name of the skill    color  String  The hexadecimal string of the color      Info  All parameters required by routes of the API need to be passed as JSON format### Read all skills", 
             "title": "Properties"
         }, 
         {
@@ -397,7 +297,7 @@
         }, 
         {
             "location": "/skills/#example-of-json", 
-            "text": "{\n    \"name\":\"Swift\",\n    \"color\":\"#F4F4F4\",\n    \"level\":5\n}", 
+            "text": "{ \n         name : Swift , \n         color : #F4F4F4 \n     }", 
             "title": "EXAMPLE OF JSON"
         }, 
         {
@@ -422,7 +322,7 @@
         }, 
         {
             "location": "/skills/#example-of-json_1", 
-            "text": "{\n    \"name\":\"C#\",\n    \"color\":\"#FEB6A5\",\n    \"level\":2\n}", 
+            "text": "{ \n         name : C# , \n         color : #FEB6A5 \n     }", 
             "title": "EXAMPLE OF JSON"
         }, 
         {
@@ -447,7 +347,7 @@
         }, 
         {
             "location": "/experiences/", 
-            "text": "Experiences\n\n\nDetails\n\n\nExperience is the entity that is responsible to manage all the experiences associated to an Employee. \n\n\nProperties\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntrigram\n\n\nString\n\n\nThe trigram of the employee \n(example: \nARI\n)\n\n\n\n\n\n\navailableDate\n\n\nString\n\n\nThe date when the employee ends its mission. \nFormat is \nDD-mm-yyyy\n.\n\n\n\n\n\n\nemployeeId\n\n\nInt\n\n\nThe foreign key associated of the Employee object that have the Experience. \nFormat is \nDD-mm-yyyy\n.\n\n\n\n\n\n\n\n\nAvailable operations\n\n\nRead all experiences\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/experiences\n\n\n\nCreate and update an Experience\n\n\nAn Experience can be created for a particular Employee.\n\n\nSee \nhere\n to know how to \nmanage\n an Experience for an Employee.", 
+            "text": "Experiences\n\n\nDescription\n\n\nExperience is the entity that is responsible to manage all the experiences associated to an Employee. \n\n\nProperties\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntrigram\n\n\nString\n\n\nThe trigram of the employee \n(example: \nARI\n)\n\n\n\n\n\n\navailableDate\n\n\nString\n\n\nThe date when the employee ends its mission. \nFormat is \nDD-mm-yyyy\n.\n\n\n\n\n\n\nemployeeId\n\n\nInt\n\n\nThe foreign key associated of the Employee object that have the Experience. \nFormat is \nDD-mm-yyyy\n.\n\n\n\n\n\n\n\n\nAvailable operations\n\n\nRead all experiences\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/experiences\n\n\n\n\n\nCreate and update an Experience\n\n\nAn Experience can be created for a particular Employee.\n\n\nSee \nhere\n to know how to \nmanage\n an Experience for an Employee.", 
             "title": "Experiences"
         }, 
         {
@@ -456,9 +356,9 @@
             "title": "Experiences"
         }, 
         {
-            "location": "/experiences/#details", 
+            "location": "/experiences/#description", 
             "text": "Experience is the entity that is responsible to manage all the experiences associated to an Employee.", 
-            "title": "Details"
+            "title": "Description"
         }, 
         {
             "location": "/experiences/#properties", 
@@ -484,6 +384,236 @@
             "location": "/experiences/#create-and-update-an-experience", 
             "text": "An Experience can be created for a particular Employee.  See  here  to know how to  manage  an Experience for an Employee.", 
             "title": "Create and update an Experience"
+        }, 
+        {
+            "location": "/link_experiences/", 
+            "text": "Add an experience to an Employee\n\n\nRelationships : read, create, update and delete\n\n\nRead the experiences of an Employee\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/employees/:id/experiences\n\n\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/employees/99/experiences\n\n\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to see.\n\n\n\n\n\n\n\n\nResponse example : an array of experiences\n\n\n    \n{\n\n      \nexperiences\n:\n \n[\n\n        \n{\n\n          \nendDate\n:\n \n15-08-2017\n,\n\n          \ndesc\n:\n \nAdolescebat autem obstinatum propositum erga haec et similia multa scrutanda, stimulos admovente regina, quae abrupte mariti fortunas trudebat in exitium praeceps, cum eum potius lenitate feminea ad veritatis humanitatisque viam reducere utilia suadendo deberet, ut in Gordianorum actibus factitasse Maximini truculenti illius imperatoris rettulimus coniugem.\n,\n\n          \ntitle\n:\n \nVapor Developer\n,\n\n          \ncompagnyName\n:\n \nVolvo\n,\n\n          \nstartDate\n:\n \n15-04-2015\n,\n\n          \nemployeeId\n:\n \n1\n\n        \n},\n\n        \n{\n\n          \nendDate\n:\n \n15-08-2017\n,\n\n          \ndesc\n:\n \nAdolescebat autem obstinatum propositum erga haec et similia multa scrutanda, stimulos admovente regina, quae abrupte mariti fortunas trudebat in exitium praeceps, cum eum potius lenitate feminea ad veritatis humanitatisque viam reducere utilia suadendo deberet, ut in Gordianorum actibus factitasse Maximini truculenti illius imperatoris rettulimus coniugem.\n,\n\n          \ntitle\n:\n \nVapor Developer\n,\n\n          \ncompagnyName\n:\n \nVolvo\n,\n\n          \nstartDate\n:\n \n15-04-2015\n,\n\n          \nemployeeId\n:\n \n1\n\n        \n}\n\n      \n]\n\n    \n}\n\n\n\n\n\n\nCreate an experience for an Employee\n\n\nThis endpoint adds an Experience for an Employee. \n\n\nPOST\n\n\nhttps://cvteque.herokuapp.com/employees/:id/experiences\n\n\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/employees/99/experiences\n\n\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to add an experience.\n\n\n\n\n\n\n\n\nRequirements\n\n\nIt needs a JSON \nExperience\n object passed in the request's body.\n\n\nEXAMPLE OF JSON\n\n\n    \n{\n\n        \ntitle\n:\nVapor Developer\n,\n\n        \ncompagnyName\n:\nVolvo\n,\n\n        \ndesc\n:\nAdolescebat autem obstinatum propositum...\n,\n\n        \nstartDate\n:\n15-04-2015\n,\n\n        \nendDate\n:\n15-08-2017\n\n    \n}\n   \n\n\n\n\n\nUpdate an experience for an Employee\n\n\nThis endpoint updates an existing experience for an Employee.\n\n\nPATCH\n\n\nhttps://cvteque.herokuapp.com/employees/:employee_id/experiences/:experience_id\n\n\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/employees/99/experiences/10\n\n\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nemployee_id\n\n\nInt\n\n\nThe employee's ID you want to update the experience.\n\n\n\n\n\n\nexperience_id\n\n\nInt\n\n\nThe experience's ID you want to update.\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\nAll the parameters must be sent to update an Experience.\n\n\n\n\nEXAMPLE OF JSON\n\n\n    \n{\n\n        \ntitle\n:\nVapor Developer\n,\n\n        \ncompagnyName\n:\nVolvo\n,\n\n        \ndesc\n:\nAdolescebat autem obstinatum propositum...\n,\n\n        \nstartDate\n:\n15-04-2015\n,\n\n        \nendDate\n:\n15-08-2017\n\n    \n}\n   \n\n\n\n\n\n\n\nTip\n\n\nThe same JSON as Create an Experience, just change the values you want.\n\n\n\n\nDelete a specific Experience\n\n\nDELETE\n\n\nhttps://cvteque.herokuapp.com/employees/:id/experiences/:id\n\n\n\n\n\nUsage example\n\n\nhttps://cvteque.herokuapp.com/employees/99/experiences/3\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to delete.\n\n\n\n\n\n\n\n\nDelete all the Experiences of an Employee\n\n\nDELETE\n\n\nhttps://cvteque.herokuapp.com/employees/:id/experiences\n\n\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/employees/99/experiences\n\n\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to delete.", 
+            "title": "Manage experiences of Employee"
+        }, 
+        {
+            "location": "/link_experiences/#add-an-experience-to-an-employee", 
+            "text": "", 
+            "title": "Add an experience to an Employee"
+        }, 
+        {
+            "location": "/link_experiences/#relationships-read-create-update-and-delete", 
+            "text": "", 
+            "title": "Relationships : read, create, update and delete"
+        }, 
+        {
+            "location": "/link_experiences/#read-the-experiences-of-an-employee", 
+            "text": "", 
+            "title": "Read the experiences of an Employee"
+        }, 
+        {
+            "location": "/link_experiences/#get", 
+            "text": "https://cvteque.herokuapp.com/employees/:id/experiences", 
+            "title": "GET"
+        }, 
+        {
+            "location": "/link_experiences/#example-usage", 
+            "text": "https://cvteque.herokuapp.com/employees/99/experiences", 
+            "title": "EXAMPLE USAGE"
+        }, 
+        {
+            "location": "/link_experiences/#parameters", 
+            "text": "Field  Type  Description      id  Int  The employee's ID you want to see.", 
+            "title": "PARAMETERS"
+        }, 
+        {
+            "location": "/link_experiences/#response-example-an-array-of-experiences", 
+            "text": "{ \n       experiences :   [ \n         { \n           endDate :   15-08-2017 , \n           desc :   Adolescebat autem obstinatum propositum erga haec et similia multa scrutanda, stimulos admovente regina, quae abrupte mariti fortunas trudebat in exitium praeceps, cum eum potius lenitate feminea ad veritatis humanitatisque viam reducere utilia suadendo deberet, ut in Gordianorum actibus factitasse Maximini truculenti illius imperatoris rettulimus coniugem. , \n           title :   Vapor Developer , \n           compagnyName :   Volvo , \n           startDate :   15-04-2015 , \n           employeeId :   1 \n         }, \n         { \n           endDate :   15-08-2017 , \n           desc :   Adolescebat autem obstinatum propositum erga haec et similia multa scrutanda, stimulos admovente regina, quae abrupte mariti fortunas trudebat in exitium praeceps, cum eum potius lenitate feminea ad veritatis humanitatisque viam reducere utilia suadendo deberet, ut in Gordianorum actibus factitasse Maximini truculenti illius imperatoris rettulimus coniugem. , \n           title :   Vapor Developer , \n           compagnyName :   Volvo , \n           startDate :   15-04-2015 , \n           employeeId :   1 \n         } \n       ] \n     }", 
+            "title": "Response example : an array of experiences"
+        }, 
+        {
+            "location": "/link_experiences/#create-an-experience-for-an-employee", 
+            "text": "This endpoint adds an Experience for an Employee.", 
+            "title": "Create an experience for an Employee"
+        }, 
+        {
+            "location": "/link_experiences/#post", 
+            "text": "https://cvteque.herokuapp.com/employees/:id/experiences", 
+            "title": "POST"
+        }, 
+        {
+            "location": "/link_experiences/#example-usage_1", 
+            "text": "https://cvteque.herokuapp.com/employees/99/experiences", 
+            "title": "EXAMPLE USAGE"
+        }, 
+        {
+            "location": "/link_experiences/#parameters_1", 
+            "text": "Field  Type  Description      id  Int  The employee's ID you want to add an experience.", 
+            "title": "PARAMETERS"
+        }, 
+        {
+            "location": "/link_experiences/#requirements", 
+            "text": "It needs a JSON  Experience  object passed in the request's body.", 
+            "title": "Requirements"
+        }, 
+        {
+            "location": "/link_experiences/#example-of-json", 
+            "text": "{ \n         title : Vapor Developer , \n         compagnyName : Volvo , \n         desc : Adolescebat autem obstinatum propositum... , \n         startDate : 15-04-2015 , \n         endDate : 15-08-2017 \n     }", 
+            "title": "EXAMPLE OF JSON"
+        }, 
+        {
+            "location": "/link_experiences/#update-an-experience-for-an-employee", 
+            "text": "This endpoint updates an existing experience for an Employee.", 
+            "title": "Update an experience for an Employee"
+        }, 
+        {
+            "location": "/link_experiences/#patch", 
+            "text": "https://cvteque.herokuapp.com/employees/:employee_id/experiences/:experience_id", 
+            "title": "PATCH"
+        }, 
+        {
+            "location": "/link_experiences/#example-usage_2", 
+            "text": "https://cvteque.herokuapp.com/employees/99/experiences/10", 
+            "title": "EXAMPLE USAGE"
+        }, 
+        {
+            "location": "/link_experiences/#parameters_2", 
+            "text": "Field  Type  Description      employee_id  Int  The employee's ID you want to update the experience.    experience_id  Int  The experience's ID you want to update.      Warning  All the parameters must be sent to update an Experience.", 
+            "title": "PARAMETERS"
+        }, 
+        {
+            "location": "/link_experiences/#example-of-json_1", 
+            "text": "{ \n         title : Vapor Developer , \n         compagnyName : Volvo , \n         desc : Adolescebat autem obstinatum propositum... , \n         startDate : 15-04-2015 , \n         endDate : 15-08-2017 \n     }       Tip  The same JSON as Create an Experience, just change the values you want.", 
+            "title": "EXAMPLE OF JSON"
+        }, 
+        {
+            "location": "/link_experiences/#delete-a-specific-experience", 
+            "text": "", 
+            "title": "Delete a specific Experience"
+        }, 
+        {
+            "location": "/link_experiences/#delete", 
+            "text": "https://cvteque.herokuapp.com/employees/:id/experiences/:id", 
+            "title": "DELETE"
+        }, 
+        {
+            "location": "/link_experiences/#usage-example", 
+            "text": "https://cvteque.herokuapp.com/employees/99/experiences/3", 
+            "title": "Usage example"
+        }, 
+        {
+            "location": "/link_experiences/#parameters_3", 
+            "text": "Field  Type  Description      id  Int  The employee's ID you want to delete.", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/link_experiences/#delete-all-the-experiences-of-an-employee", 
+            "text": "", 
+            "title": "Delete all the Experiences of an Employee"
+        }, 
+        {
+            "location": "/link_experiences/#delete_1", 
+            "text": "https://cvteque.herokuapp.com/employees/:id/experiences", 
+            "title": "DELETE"
+        }, 
+        {
+            "location": "/link_experiences/#example-usage_3", 
+            "text": "https://cvteque.herokuapp.com/employees/99/experiences", 
+            "title": "EXAMPLE USAGE"
+        }, 
+        {
+            "location": "/link_experiences/#parameters_4", 
+            "text": "Field  Type  Description      id  Int  The employee's ID you want to delete.", 
+            "title": "PARAMETERS"
+        }, 
+        {
+            "location": "/link_skills/", 
+            "text": "Link a skill to an Employee\n\n\nDescription\n\n\nAn Employee can have one or more skills. This page describes the way to link or unlink an existing Skill to an Employee.\n\n\n\n\nInfo\n\n\nAs we have a many-to-many relationship between Skill and Employee, we have created a intermediate table that we used to match skills with employees. \n\n\n\n\nRelationships : read, linking and delete\n\n\nRead the skills of an Employee\n\n\nGET\n\n\nhttps://cvteque.herokuapp.com/employees/:id/skills\n\n\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/employees/99/skills\n\n\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to see.\n\n\n\n\n\n\n\n\nResponse example : an array of skills\n\n\n{\n\n  \nskills\n:\n \n[\n\n    \n{\n\n      \nname\n:\n \nC#\n,\n\n      \nskill_details\n:\n \n{\n\n        \nskillLevel\n:\n \n4\n\n      \n},\n\n      \nid\n:\n \n4\n,\n\n      \ncolor\n:\n \n#BBBBBB\n\n    \n},\n\n    \n{\n\n      \nname\n:\n \nPHP\n,\n\n      \nskill_details\n:\n \n{\n\n        \nskillLevel\n:\n \n4\n\n      \n},\n\n      \nid\n:\n \n6\n,\n\n      \ncolor\n:\n \n#BBBBBB\n\n    \n}\n\n  \n]\n\n\n}\n\n\n\n\n\n\nLink a skill for an Employee\n\n\n\n\nWarning\n\n\nSkills must already exist in the database before linking a Skill to an Employee.\n\n\n\n\nThis endpoint links a Skill to an Employee. \n\n\nPOST\n\n\nhttps://cvteque.herokuapp.com/employees/:id/skills\n\n\n\n\n\nEXAMPLE USAGE\n\n\nhttps://cvteque.herokuapp.com/employees/99/skills\n\n\n\n\n\nPARAMETERS\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to link a Skill.\n\n\n\n\n\n\n\n\nRequirements\n\n\nWhen linking a Skill to an Employee, it needs to know the skill level of the Skill. \n\n\nJust post it with the following json.\n\n\nEXAMPLE OF JSON\n\n\n  \n{\n\n    \nskillLevel\n:\n4\n\n  \n}\n\n\n\n\n\n\nDelete a specific Experience\n\n\nDELETE\n\n\nhttps://cvteque.herokuapp.com/employees/:id/skills/:id\n\n\n\n\n\nUsage example\n\n\nhttps://cvteque.herokuapp.com/employees/99/skills/3\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nField\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInt\n\n\nThe employee's ID you want to delete.", 
+            "title": "Manage skills of Employee"
+        }, 
+        {
+            "location": "/link_skills/#link-a-skill-to-an-employee", 
+            "text": "", 
+            "title": "Link a skill to an Employee"
+        }, 
+        {
+            "location": "/link_skills/#description", 
+            "text": "An Employee can have one or more skills. This page describes the way to link or unlink an existing Skill to an Employee.   Info  As we have a many-to-many relationship between Skill and Employee, we have created a intermediate table that we used to match skills with employees.", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/link_skills/#relationships-read-linking-and-delete", 
+            "text": "", 
+            "title": "Relationships : read, linking and delete"
+        }, 
+        {
+            "location": "/link_skills/#read-the-skills-of-an-employee", 
+            "text": "", 
+            "title": "Read the skills of an Employee"
+        }, 
+        {
+            "location": "/link_skills/#get", 
+            "text": "https://cvteque.herokuapp.com/employees/:id/skills", 
+            "title": "GET"
+        }, 
+        {
+            "location": "/link_skills/#example-usage", 
+            "text": "https://cvteque.herokuapp.com/employees/99/skills", 
+            "title": "EXAMPLE USAGE"
+        }, 
+        {
+            "location": "/link_skills/#parameters", 
+            "text": "Field  Type  Description      id  Int  The employee's ID you want to see.", 
+            "title": "PARAMETERS"
+        }, 
+        {
+            "location": "/link_skills/#response-example-an-array-of-skills", 
+            "text": "{ \n   skills :   [ \n     { \n       name :   C# , \n       skill_details :   { \n         skillLevel :   4 \n       }, \n       id :   4 , \n       color :   #BBBBBB \n     }, \n     { \n       name :   PHP , \n       skill_details :   { \n         skillLevel :   4 \n       }, \n       id :   6 , \n       color :   #BBBBBB \n     } \n   ]  }", 
+            "title": "Response example : an array of skills"
+        }, 
+        {
+            "location": "/link_skills/#link-a-skill-for-an-employee", 
+            "text": "Warning  Skills must already exist in the database before linking a Skill to an Employee.   This endpoint links a Skill to an Employee.", 
+            "title": "Link a skill for an Employee"
+        }, 
+        {
+            "location": "/link_skills/#post", 
+            "text": "https://cvteque.herokuapp.com/employees/:id/skills", 
+            "title": "POST"
+        }, 
+        {
+            "location": "/link_skills/#example-usage_1", 
+            "text": "https://cvteque.herokuapp.com/employees/99/skills", 
+            "title": "EXAMPLE USAGE"
+        }, 
+        {
+            "location": "/link_skills/#parameters_1", 
+            "text": "Field  Type  Description      id  Int  The employee's ID you want to link a Skill.", 
+            "title": "PARAMETERS"
+        }, 
+        {
+            "location": "/link_skills/#requirements", 
+            "text": "When linking a Skill to an Employee, it needs to know the skill level of the Skill.   Just post it with the following json.", 
+            "title": "Requirements"
+        }, 
+        {
+            "location": "/link_skills/#example-of-json", 
+            "text": "{ \n     skillLevel : 4 \n   }", 
+            "title": "EXAMPLE OF JSON"
+        }, 
+        {
+            "location": "/link_skills/#delete-a-specific-experience", 
+            "text": "", 
+            "title": "Delete a specific Experience"
+        }, 
+        {
+            "location": "/link_skills/#delete", 
+            "text": "https://cvteque.herokuapp.com/employees/:id/skills/:id", 
+            "title": "DELETE"
+        }, 
+        {
+            "location": "/link_skills/#usage-example", 
+            "text": "https://cvteque.herokuapp.com/employees/99/skills/3", 
+            "title": "Usage example"
+        }, 
+        {
+            "location": "/link_skills/#parameters_2", 
+            "text": "Field  Type  Description      id  Int  The employee's ID you want to delete.", 
+            "title": "Parameters"
         }
     ]
 }

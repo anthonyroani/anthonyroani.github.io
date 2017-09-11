@@ -190,6 +190,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#description" title="Description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#properties" title="Properties" class="md-nav__link">
     Properties
   </a>
@@ -395,6 +402,30 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../link_experiences/" title="Manage experiences of Employee" class="md-nav__link">
+      Manage experiences of Employee
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../link_skills/" title="Manage skills of Employee" class="md-nav__link">
+      Manage skills of Employee
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -414,6 +445,13 @@
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" title="Description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#properties" title="Properties" class="md-nav__link">
@@ -604,6 +642,7 @@
                 
                 
                 <h1 id="employees">Employees</h1>
+<h3 id="description">Description</h3>
 <p>Employee is the entity that is responsible to manage all the <em>employees</em> associated to a User entity. </p>
 <p>The entity has a <strong>One to Many</strong> relationship with Experience as he can have several experiences.</p>
 <h2 id="properties">Properties</h2>
@@ -623,7 +662,7 @@
 </tr>
 <tr>
 <td>trigram</td>
-<td><em>String</em></td>
+<td><em>String</em> <strong><em>(unique)</em></strong></td>
 <td>The trigram of the Employee (<strong>ARI</strong> for example)</td>
 </tr>
 <tr>
@@ -640,58 +679,72 @@
 <h3 id="read-all-employees">Read all employees</h3>
 <p>Returns the list of all employees and their experiences</p>
 <h4 id="get">GET</h4>
-<pre><code>https://cvteque.herokuapp.com/employees
-</code></pre>
+<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/employees
+</pre></div>
+
+
 <h5 id="response-example">Response example</h5>
-<pre><code>[
-  {
-    "experiences": [],
-    "trigram": "PMU",
-    "availableDate": "03-11-2017"
-  },
-  {
-    "experiences": [],
-    "trigram": "ARI",
-    "availableDate": "03-11-2017"
-  },
-  {
-    "experiences": [],
-    "trigram": "SCH",
-    "availableDate": "03-11-2017"
-  }
-]
-</code></pre>
+<div class="codehilite"><pre><span></span>    <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;experiences&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;trigram&quot;</span><span class="p">:</span> <span class="s2">&quot;PMU&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;availableDate&quot;</span><span class="p">:</span> <span class="s2">&quot;03-11-2017&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;experiences&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;trigram&quot;</span><span class="p">:</span> <span class="s2">&quot;ARI&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;availableDate&quot;</span><span class="p">:</span> <span class="s2">&quot;03-11-2017&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;experiences&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;trigram&quot;</span><span class="p">:</span> <span class="s2">&quot;SCH&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;availableDate&quot;</span><span class="p">:</span> <span class="s2">&quot;03-11-2017&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+</pre></div>
+
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>In order to create an Employee, <strong>the corresponding User needs to be created before</strong>. This POST request requires the ID of the User.</p>
 </div>
 <h4 id="post">POST</h4>
-<pre><code>https://cvteque.herokuapp.com/employees
-</code></pre>
+<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/employees
+</pre></div>
+
+
 <h5 id="json-example">JSON example</h5>
-<pre><code>{
-    "trigram":"ARI",
-    "availableDate": "12-06-2017",
-    "userId":1
-}
-</code></pre>
+<div class="codehilite"><pre><span></span>    <span class="p">{</span>
+        <span class="nt">&quot;trigram&quot;</span><span class="p">:</span><span class="s2">&quot;ARI&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;availableDate&quot;</span><span class="p">:</span> <span class="s2">&quot;12-06-2017&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="mi">1</span>
+    <span class="p">}</span>
+</pre></div>
+
+
 <h5 id="response-example_1">Response example</h5>
-<pre><code>{
-  "employee": {
-    "trigram": "PLU",
-    "userId": 1,
-    "availableDate": "03-11-2017"
-  },
-  "success": true
-}
-</code></pre>
+<div class="codehilite"><pre><span></span>    <span class="p">{</span>
+      <span class="nt">&quot;employee&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;trigram&quot;</span><span class="p">:</span> <span class="s2">&quot;PLU&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;userId&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;availableDate&quot;</span><span class="p">:</span> <span class="s2">&quot;03-11-2017&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+</pre></div>
+
+
 <h3 id="update-an-employee">Update an employee</h3>
 <h4 id="patch">PATCH</h4>
-<pre><code>https://cvteque.herokuapp.com/employees/:id
-</code></pre>
+<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/employees/:id
+</pre></div>
+
+
 <h5 id="usage-example">Usage example</h5>
-<pre><code>https://cvteque.herokuapp.com/employees/99
-</code></pre>
+<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/employees/99
+</pre></div>
+
+
 <h4 id="parameters">PARAMETERS</h4>
 <table>
 <thead>
@@ -710,189 +763,42 @@
 </tbody>
 </table>
 <h5 id="json-example_1">JSON example</h5>
-<pre><code>{
-    "trigram":"PLU",
-    "availableDate":"03-11-2017",
-    "userId":1
-}
-</code></pre>
+<div class="codehilite"><pre><span></span>    <span class="p">{</span>
+        <span class="nt">&quot;trigram&quot;</span><span class="p">:</span><span class="s2">&quot;PLU&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;availableDate&quot;</span><span class="p">:</span><span class="s2">&quot;03-11-2017&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="mi">1</span>
+    <span class="p">}</span>
+</pre></div>
+
+
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>The JSON is the same as Create, just change the values you want.</p>
 </div>
 <h5 id="response-example_2">Response example</h5>
-<pre><code>{
-  "updated object": {
-    "trigram": "PLU",
-    "userId": 1,
-    "availableDate": "03-11-2017"
-  },
-  "success": true
-}
-</code></pre>
+<div class="codehilite"><pre><span></span>    <span class="p">{</span>
+      <span class="nt">&quot;updated object&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;trigram&quot;</span><span class="p">:</span> <span class="s2">&quot;PLU&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;userId&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;availableDate&quot;</span><span class="p">:</span> <span class="s2">&quot;03-11-2017&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+</pre></div>
+
+
 <h3 id="delete-a-specific-employee">Delete a specific Employee</h3>
 <h4 id="delete">DELETE</h4>
-<pre><code>https://cvteque.herokuapp.com/employees/:id
-</code></pre>
+<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/employees/:id
+</pre></div>
+
+
 <h5 id="usage-example_1">Usage example</h5>
-<pre><code>https://cvteque.herokuapp.com/employees/99
-</code></pre>
+<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/employees/99
+</pre></div>
+
+
 <h4 id="parameters_1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>Int</td>
-<td>The employee's ID you want to delete.</td>
-</tr>
-</tbody>
-</table>
-<h1 id="relationships">Relationships</h1>
-<h2 id="experiences-operations-create-update-and-delete">Experiences operations : create, update and delete</h2>
-<h3 id="read-the-existing-experience-objects">Read the existing Experience objects</h3>
-<h4 id="get_1">GET</h4>
-<pre><code>https://cvteque.herokuapp.com/employees/:id/experiences
-</code></pre>
-<h5 id="example-usage">EXAMPLE USAGE</h5>
-<pre><code>https://cvteque.herokuapp.com/employees/99/experiences
-</code></pre>
-<h4 id="parameters_2">PARAMETERS</h4>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>Int</td>
-<td>The employee's ID you want to see.</td>
-</tr>
-</tbody>
-</table>
-<h5 id="response-example-an-array-of-experiences">Response example : an array of experiences</h5>
-<pre><code>{
-  "experiences": [
-    {
-      "endDate": "15-08-2017",
-      "desc": "Adolescebat autem obstinatum propositum erga haec et similia multa scrutanda, stimulos admovente regina, quae abrupte mariti fortunas trudebat in exitium praeceps, cum eum potius lenitate feminea ad veritatis humanitatisque viam reducere utilia suadendo deberet, ut in Gordianorum actibus factitasse Maximini truculenti illius imperatoris rettulimus coniugem.",
-      "title": "Vapor Developer",
-      "compagnyName": "Volvo",
-      "startDate": "15-04-2015",
-      "employeeId": 1
-    },
-    {
-      "endDate": "15-08-2017",
-      "desc": "Adolescebat autem obstinatum propositum erga haec et similia multa scrutanda, stimulos admovente regina, quae abrupte mariti fortunas trudebat in exitium praeceps, cum eum potius lenitate feminea ad veritatis humanitatisque viam reducere utilia suadendo deberet, ut in Gordianorum actibus factitasse Maximini truculenti illius imperatoris rettulimus coniugem.",
-      "title": "Vapor Developer",
-      "compagnyName": "Volvo",
-      "startDate": "15-04-2015",
-      "employeeId": 1
-    }
-  ]
-}
-</code></pre>
-<h3 id="create-an-experience-for-an-employee">Create an experience for an Employee</h3>
-<p>This endpoint add an Experience for an Employee. </p>
-<h4 id="post_1">POST</h4>
-<pre><code>https://cvteque.herokuapp.com/employees/:id/experiences
-</code></pre>
-<h5 id="example-usage_1">EXAMPLE USAGE</h5>
-<pre><code>https://cvteque.herokuapp.com/employees/99/experiences
-</code></pre>
-<h4 id="parameters_3">PARAMETERS</h4>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>Int</td>
-<td>The employee's ID you want to add an experience.</td>
-</tr>
-</tbody>
-</table>
-<h5 id="requirements">Requirements</h5>
-<p>It needs a JSON <strong>Experience</strong> object passed in the request's body.</p>
-<h5 id="example-of-json">EXAMPLE OF JSON</h5>
-<pre><code>{
-    "title":"Vapor Developer",
-    "compagnyName":"Volvo",
-    "desc":"Adolescebat autem obstinatum propositum...",
-    "startDate":"15-04-2015",
-    "endDate":"15-08-2017"
-}
-</code></pre>
-<h3 id="update-an-experience-for-an-employee">Update an experience for an Employee</h3>
-<p>This endpoint updates an existing experience for an Employee.</p>
-<h4 id="patch_1">PATCH</h4>
-<pre><code>https://cvteque.herokuapp.com/employees/:employee_id/experiences/:experience_id
-</code></pre>
-<h5 id="example-usage_2">EXAMPLE USAGE</h5>
-<pre><code>https://cvteque.herokuapp.com/employees/99/experiences/10
-</code></pre>
-<h4 id="parameters_4">PARAMETERS</h4>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>employee_id</td>
-<td>Int</td>
-<td>The employee's ID you want to update the experience.</td>
-</tr>
-<tr>
-<td>experience_id</td>
-<td>Int</td>
-<td>The experience's ID you want to update.</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>All the parameters have to be sent to update an Experience.</p>
-</div>
-<h5 id="example-of-json_1">EXAMPLE OF JSON</h5>
-<pre><code>{
-    "title":"Vapor Developer",
-    "compagnyName":"Volvo",
-    "desc":"Adolescebat autem obstinatum propositum...",
-    "startDate":"15-04-2015",
-    "endDate":"15-08-2017"
-}
-</code></pre>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>The same JSON as Create an Experience, just change the values you want.</p>
-</div>
-<h3 id="delete-all-the-experiences-of-an-employee">Delete all the Experiences of an Employee</h3>
-<h4 id="delete_1">DELETE</h4>
-<pre><code>https://cvteque.herokuapp.com/employees/:id/experiences
-</code></pre>
-<h5 id="example-usage_3">EXAMPLE USAGE</h5>
-<pre><code>https://cvteque.herokuapp.com/employees/99/experiences
-</code></pre>
-<h4 id="parameters_5">PARAMETERS</h4>
 <table>
 <thead>
 <tr>

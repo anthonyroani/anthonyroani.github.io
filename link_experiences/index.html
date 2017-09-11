@@ -16,7 +16,7 @@
     
     
       
-        <title>Skills - CVTeque API</title>
+        <title>Manage experiences of Employee - CVTeque API</title>
       
     
     
@@ -76,7 +76,7 @@
             
               
             
-            Skills
+            Manage experiences of Employee
           
         </span>
       </div>
@@ -173,6 +173,30 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../skills/" title="Skills" class="md-nav__link">
+      Skills
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../experiences/" title="Experiences" class="md-nav__link">
+      Experiences
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -184,11 +208,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Skills
+        Manage experiences of Employee
       </label>
     
-    <a href="./" title="Skills" class="md-nav__link md-nav__link--active">
-      Skills
+    <a href="./" title="Manage experiences of Employee" class="md-nav__link md-nav__link--active">
+      Manage experiences of Employee
     </a>
     
       
@@ -202,15 +226,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" title="Description" class="md-nav__link">
-    Description
+  <a href="#relationships-read-create-update-and-delete" title="Relationships : read, create, update and delete" class="md-nav__link">
+    Relationships : read, create, update and delete
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#properties" title="Properties" class="md-nav__link">
-    Properties
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-the-experiences-of-an-employee" title="Read the experiences of an Employee" class="md-nav__link">
+    Read the experiences of an Employee
   </a>
   
     <nav class="md-nav">
@@ -218,21 +243,6 @@
         
           <li class="md-nav__item">
   <a href="#get" title="GET" class="md-nav__link">
-    GET
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#read-a-specific-skill" title="Read a specific skill" class="md-nav__link">
-    Read a specific skill
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get_1" title="GET" class="md-nav__link">
     GET
   </a>
   
@@ -256,6 +266,19 @@
     PARAMETERS
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response-example-an-array-of-experiences" title="Response example : an array of experiences" class="md-nav__link">
+    Response example : an array of experiences
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -264,8 +287,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-a-skill" title="Create a skill" class="md-nav__link">
-    Create a skill
+  <a href="#create-an-experience-for-an-employee" title="Create an experience for an Employee" class="md-nav__link">
+    Create an experience for an Employee
   </a>
   
     <nav class="md-nav">
@@ -274,39 +297,6 @@
           <li class="md-nav__item">
   <a href="#post" title="POST" class="md-nav__link">
     POST
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-of-json" title="EXAMPLE OF JSON" class="md-nav__link">
-    EXAMPLE OF JSON
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update-a-skill" title="Update a skill" class="md-nav__link">
-    Update a skill
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#patch" title="PATCH" class="md-nav__link">
-    PATCH
   </a>
   
     <nav class="md-nav">
@@ -333,7 +323,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-of-json_1" title="EXAMPLE OF JSON" class="md-nav__link">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-json" title="EXAMPLE OF JSON" class="md-nav__link">
     EXAMPLE OF JSON
   </a>
   
@@ -350,16 +347,16 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#delete-a-specific-skill" title="Delete a specific skill" class="md-nav__link">
-    Delete a specific skill
+  <a href="#update-an-experience-for-an-employee" title="Update an experience for an Employee" class="md-nav__link">
+    Update an experience for an Employee
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#delete" title="DELETE" class="md-nav__link">
-    DELETE
+  <a href="#patch" title="PATCH" class="md-nav__link">
+    PATCH
   </a>
   
     <nav class="md-nav">
@@ -382,6 +379,99 @@
     PARAMETERS
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-of-json_1" title="EXAMPLE OF JSON" class="md-nav__link">
+    EXAMPLE OF JSON
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-specific-experience" title="Delete a specific Experience" class="md-nav__link">
+    Delete a specific Experience
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delete" title="DELETE" class="md-nav__link">
+    DELETE
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage-example" title="Usage example" class="md-nav__link">
+    Usage example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-all-the-experiences-of-an-employee" title="Delete all the Experiences of an Employee" class="md-nav__link">
+    Delete all the Experiences of an Employee
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delete_1" title="DELETE" class="md-nav__link">
+    DELETE
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_3" title="EXAMPLE USAGE" class="md-nav__link">
+    EXAMPLE USAGE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" title="PARAMETERS" class="md-nav__link">
+    PARAMETERS
+  </a>
+  
 </li>
         
       </ul>
@@ -400,30 +490,6 @@
   
 </nav>
     
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../experiences/" title="Experiences" class="md-nav__link">
-      Experiences
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../link_experiences/" title="Manage experiences of Employee" class="md-nav__link">
-      Manage experiences of Employee
-    </a>
   </li>
 
     
@@ -460,15 +526,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" title="Description" class="md-nav__link">
-    Description
+  <a href="#relationships-read-create-update-and-delete" title="Relationships : read, create, update and delete" class="md-nav__link">
+    Relationships : read, create, update and delete
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#properties" title="Properties" class="md-nav__link">
-    Properties
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-the-experiences-of-an-employee" title="Read the experiences of an Employee" class="md-nav__link">
+    Read the experiences of an Employee
   </a>
   
     <nav class="md-nav">
@@ -476,21 +543,6 @@
         
           <li class="md-nav__item">
   <a href="#get" title="GET" class="md-nav__link">
-    GET
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#read-a-specific-skill" title="Read a specific skill" class="md-nav__link">
-    Read a specific skill
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get_1" title="GET" class="md-nav__link">
     GET
   </a>
   
@@ -514,6 +566,19 @@
     PARAMETERS
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response-example-an-array-of-experiences" title="Response example : an array of experiences" class="md-nav__link">
+    Response example : an array of experiences
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -522,8 +587,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-a-skill" title="Create a skill" class="md-nav__link">
-    Create a skill
+  <a href="#create-an-experience-for-an-employee" title="Create an experience for an Employee" class="md-nav__link">
+    Create an experience for an Employee
   </a>
   
     <nav class="md-nav">
@@ -532,39 +597,6 @@
           <li class="md-nav__item">
   <a href="#post" title="POST" class="md-nav__link">
     POST
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-of-json" title="EXAMPLE OF JSON" class="md-nav__link">
-    EXAMPLE OF JSON
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update-a-skill" title="Update a skill" class="md-nav__link">
-    Update a skill
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#patch" title="PATCH" class="md-nav__link">
-    PATCH
   </a>
   
     <nav class="md-nav">
@@ -591,7 +623,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-of-json_1" title="EXAMPLE OF JSON" class="md-nav__link">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-json" title="EXAMPLE OF JSON" class="md-nav__link">
     EXAMPLE OF JSON
   </a>
   
@@ -608,16 +647,16 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#delete-a-specific-skill" title="Delete a specific skill" class="md-nav__link">
-    Delete a specific skill
+  <a href="#update-an-experience-for-an-employee" title="Update an experience for an Employee" class="md-nav__link">
+    Update an experience for an Employee
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#delete" title="DELETE" class="md-nav__link">
-    DELETE
+  <a href="#patch" title="PATCH" class="md-nav__link">
+    PATCH
   </a>
   
     <nav class="md-nav">
@@ -637,6 +676,99 @@
         
           <li class="md-nav__item">
   <a href="#parameters_2" title="PARAMETERS" class="md-nav__link">
+    PARAMETERS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-of-json_1" title="EXAMPLE OF JSON" class="md-nav__link">
+    EXAMPLE OF JSON
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-specific-experience" title="Delete a specific Experience" class="md-nav__link">
+    Delete a specific Experience
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delete" title="DELETE" class="md-nav__link">
+    DELETE
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage-example" title="Usage example" class="md-nav__link">
+    Usage example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-all-the-experiences-of-an-employee" title="Delete all the Experiences of an Employee" class="md-nav__link">
+    Delete all the Experiences of an Employee
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delete_1" title="DELETE" class="md-nav__link">
+    DELETE
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_3" title="EXAMPLE USAGE" class="md-nav__link">
+    EXAMPLE USAGE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" title="PARAMETERS" class="md-nav__link">
     PARAMETERS
   </a>
   
@@ -667,50 +799,16 @@
               
                 
                 
-                <h1 id="skills">Skills</h1>
-<h3 id="description">Description</h3>
-<p>Skill is the class that is responsible to manage all the skills of the CVTeque.</p>
-<p>However, this is not the class responsible of managing skills of an Employee.</p>
-<p>See <a href="../link_skills">here</a> to know how to manage skills for a specific Employee.</p>
-<h2 id="properties">Properties</h2>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td>String <strong><em>(unique)</em></strong></td>
-<td>The name of the skill</td>
-</tr>
-<tr>
-<td>color</td>
-<td>String</td>
-<td>The hexadecimal string of the color</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>All parameters required by routes of the API need to be passed as JSON format### Read all skills</p>
-</div>
+                <h1 id="add-an-experience-to-an-employee">Add an experience to an Employee</h1>
+<h2 id="relationships-read-create-update-and-delete">Relationships : read, create, update and delete</h2>
+<h3 id="read-the-experiences-of-an-employee">Read the experiences of an Employee</h3>
 <h4 id="get">GET</h4>
-<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/skills
-</pre></div>
-
-
-<h3 id="read-a-specific-skill">Read a specific skill</h3>
-<h4 id="get_1">GET</h4>
-<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/skills/:id
+<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/employees/:id/experiences
 </pre></div>
 
 
 <h5 id="example-usage">EXAMPLE USAGE</h5>
-<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/skills/99
+<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/employees/99/experiences
 </pre></div>
 
 
@@ -727,32 +825,43 @@
 <tr>
 <td>id</td>
 <td>Int</td>
-<td>The skill's ID you want to see.</td>
+<td>The employee's ID you want to see.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="create-a-skill">Create a skill</h3>
-<h4 id="post">POST</h4>
-<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/skill
-</pre></div>
-
-
-<h5 id="example-of-json">EXAMPLE OF JSON</h5>
+<h5 id="response-example-an-array-of-experiences">Response example : an array of experiences</h5>
 <div class="codehilite"><pre><span></span>    <span class="p">{</span>
-        <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Swift&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#F4F4F4&quot;</span>
+      <span class="nt">&quot;experiences&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;endDate&quot;</span><span class="p">:</span> <span class="s2">&quot;15-08-2017&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;desc&quot;</span><span class="p">:</span> <span class="s2">&quot;Adolescebat autem obstinatum propositum erga haec et similia multa scrutanda, stimulos admovente regina, quae abrupte mariti fortunas trudebat in exitium praeceps, cum eum potius lenitate feminea ad veritatis humanitatisque viam reducere utilia suadendo deberet, ut in Gordianorum actibus factitasse Maximini truculenti illius imperatoris rettulimus coniugem.&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Vapor Developer&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;compagnyName&quot;</span><span class="p">:</span> <span class="s2">&quot;Volvo&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;startDate&quot;</span><span class="p">:</span> <span class="s2">&quot;15-04-2015&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;employeeId&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;endDate&quot;</span><span class="p">:</span> <span class="s2">&quot;15-08-2017&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;desc&quot;</span><span class="p">:</span> <span class="s2">&quot;Adolescebat autem obstinatum propositum erga haec et similia multa scrutanda, stimulos admovente regina, quae abrupte mariti fortunas trudebat in exitium praeceps, cum eum potius lenitate feminea ad veritatis humanitatisque viam reducere utilia suadendo deberet, ut in Gordianorum actibus factitasse Maximini truculenti illius imperatoris rettulimus coniugem.&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Vapor Developer&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;compagnyName&quot;</span><span class="p">:</span> <span class="s2">&quot;Volvo&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;startDate&quot;</span><span class="p">:</span> <span class="s2">&quot;15-04-2015&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;employeeId&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
     <span class="p">}</span>
 </pre></div>
 
 
-<h3 id="update-a-skill">Update a skill</h3>
-<h4 id="patch">PATCH</h4>
-<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/skills/:id
+<h3 id="create-an-experience-for-an-employee">Create an experience for an Employee</h3>
+<p>This endpoint adds an Experience for an Employee. </p>
+<h4 id="post">POST</h4>
+<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/employees/:id/experiences
 </pre></div>
 
 
 <h5 id="example-usage_1">EXAMPLE USAGE</h5>
-<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/skills/99
+<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/employees/99/experiences
 </pre></div>
 
 
@@ -769,26 +878,32 @@
 <tr>
 <td>id</td>
 <td>Int</td>
-<td>The skills's ID you want to update.</td>
+<td>The employee's ID you want to add an experience.</td>
 </tr>
 </tbody>
 </table>
-<h5 id="example-of-json_1">EXAMPLE OF JSON</h5>
+<h5 id="requirements">Requirements</h5>
+<p>It needs a JSON <strong>Experience</strong> object passed in the request's body.</p>
+<h5 id="example-of-json">EXAMPLE OF JSON</h5>
 <div class="codehilite"><pre><span></span>    <span class="p">{</span>
-        <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;C#&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#FEB6A5&quot;</span>
-    <span class="p">}</span>
+        <span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;Vapor Developer&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;compagnyName&quot;</span><span class="p">:</span><span class="s2">&quot;Volvo&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;desc&quot;</span><span class="p">:</span><span class="s2">&quot;Adolescebat autem obstinatum propositum...&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;startDate&quot;</span><span class="p">:</span><span class="s2">&quot;15-04-2015&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;endDate&quot;</span><span class="p">:</span><span class="s2">&quot;15-08-2017&quot;</span>
+    <span class="p">}</span>   
 </pre></div>
 
 
-<h3 id="delete-a-specific-skill">Delete a specific skill</h3>
-<h4 id="delete">DELETE</h4>
-<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/skills/:id
+<h3 id="update-an-experience-for-an-employee">Update an experience for an Employee</h3>
+<p>This endpoint updates an existing experience for an Employee.</p>
+<h4 id="patch">PATCH</h4>
+<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/employees/:employee_id/experiences/:experience_id
 </pre></div>
 
 
 <h5 id="example-usage_2">EXAMPLE USAGE</h5>
-<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/skills/99
+<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/employees/99/experiences/10
 </pre></div>
 
 
@@ -803,9 +918,89 @@
 </thead>
 <tbody>
 <tr>
+<td>employee_id</td>
+<td>Int</td>
+<td>The employee's ID you want to update the experience.</td>
+</tr>
+<tr>
+<td>experience_id</td>
+<td>Int</td>
+<td>The experience's ID you want to update.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>All the parameters must be sent to update an Experience.</p>
+</div>
+<h5 id="example-of-json_1">EXAMPLE OF JSON</h5>
+<div class="codehilite"><pre><span></span>    <span class="p">{</span>
+        <span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;Vapor Developer&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;compagnyName&quot;</span><span class="p">:</span><span class="s2">&quot;Volvo&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;desc&quot;</span><span class="p">:</span><span class="s2">&quot;Adolescebat autem obstinatum propositum...&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;startDate&quot;</span><span class="p">:</span><span class="s2">&quot;15-04-2015&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;endDate&quot;</span><span class="p">:</span><span class="s2">&quot;15-08-2017&quot;</span>
+    <span class="p">}</span>   
+</pre></div>
+
+
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The same JSON as Create an Experience, just change the values you want.</p>
+</div>
+<h3 id="delete-a-specific-experience">Delete a specific Experience</h3>
+<h4 id="delete">DELETE</h4>
+<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/employees/:id/experiences/:id
+</pre></div>
+
+
+<h5 id="usage-example">Usage example</h5>
+<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/employees/99/experiences/3
+</pre></div>
+
+
+<h4 id="parameters_3">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
 <td>id</td>
 <td>Int</td>
-<td>The skills's ID you want to delete.</td>
+<td>The employee's ID you want to delete.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="delete-all-the-experiences-of-an-employee">Delete all the Experiences of an Employee</h3>
+<h4 id="delete_1">DELETE</h4>
+<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/employees/:id/experiences
+</pre></div>
+
+
+<h5 id="example-usage_3">EXAMPLE USAGE</h5>
+<div class="codehilite"><pre><span></span>https://cvteque.herokuapp.com/employees/99/experiences
+</pre></div>
+
+
+<h4 id="parameters_4">PARAMETERS</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Int</td>
+<td>The employee's ID you want to delete.</td>
 </tr>
 </tbody>
 </table>
@@ -827,7 +1022,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../employees/" title="Employees" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../experiences/" title="Experiences" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -836,19 +1031,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Employees
+                Experiences
               </span>
             </div>
           </a>
         
         
-          <a href="../experiences/" title="Experiences" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../link_skills/" title="Manage skills of Employee" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Experiences
+                Manage skills of Employee
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
